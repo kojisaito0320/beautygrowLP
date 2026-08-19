@@ -1,9 +1,20 @@
-/*
-!/bg-nicotto/
-!/workcanvas-lp/
-!/miraizm-lp/
-!/.gitignore
-!/README.md
-**/node_modules/
-**/.vercel/
-**/src/out/
+# dependencies / build
+node_modules/
+.next/
+out/
+next-env.d.ts
+
+# env (real passwords live only in .env.local and Vercel env vars)
+.env*.local
+.env
+
+# vercel
+.vercel/
+
+# misc
+*.tsbuildinfo
+.DS_Store
+.playwright-mcp/
+
+# sheet-sync temporary output
+tools/sheets-sync/out/

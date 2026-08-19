@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/referrals.html", "destination": "https://beautygrow-lp.vercel.app/wc/referrals", "statusCode": 308 },
+    { "source": "/(.*)", "destination": "https://beautygrow-lp.vercel.app/wc", "statusCode": 308 }
+  ]
+}
