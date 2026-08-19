@@ -35,6 +35,6 @@
   { "date": "2026/04/20", "name": "箭内 理帆", "referrer": "二階堂様", "category": "celeste", "place": "ときわ台", "status": "辞退", "tone": "ng", "interview": "4/28", "extra": "業務委託", "note": "" },
   { "date": "2026/04/30", "name": "福田 直光", "referrer": "飯田様", "category": "celeste", "place": "", "status": "不採用", "tone": "ng", "interview": "5/1", "extra": "正社員", "note": "" },
   { "date": "2026/05/13", "name": "大和 かりん", "referrer": "田村様", "category": "color", "place": "博多", "status": "不採用", "tone": "ng", "interview": "6/4", "extra": "正社員", "note": "" },
-  { "date": "2026/07/09", "name": "富永 奈央", "referrer": "井上様", "category": "matsuge", "place": "栄", "status": "内定", "tone": "ok", "interview": "7/28", "extra": "正社員", "note": "2026年9月入社予定・9月より東京研修、栄店勤務予定" },
+  { "date": "2026/07/09", "name": "富永 奈央", "referrer": "井上様", "category": "matsuge", "place": "栄", "status": "採用", "tone": "ok", "interview": "7/28", "extra": "正社員", "note": "2026年9月入社予定・9月より東京研修、栄店勤務予定" },
   { "date": "2026/07/23", "name": "服部 璃音", "referrer": "勝島様", "category": "matsuge", "place": "栄", "status": "辞退", "tone": "ng", "interview": "7/25", "extra": "正社員", "note": "" }
 ]
