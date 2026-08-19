@@ -6,10 +6,12 @@ export const wc: PartnerConfig = {
   partnerName: "株式会社グラム（ワークキャンバス）",
   meta: {
     title: "Beauty Grow 求人情報ボード｜ワークキャンバス様向け",
+    ogTitle: "Beauty Grow 求人情報ボード",
     ogDescription: "全国約70店舗の最新募集状況・強化エリア・募集要項（ワークキャンバス様向け・毎回更新）",
     ogUrl: "https://beautygrow-lp.vercel.app/wc",
   },
   hero: {
+    heading: "Beauty Grow 求人情報ボード",
     eyebrow: "FOR WORK CANVAS PARTNERS",
     addressee: "株式会社グラム（ワークキャンバス）御中｜ご紹介用最新情報",
     stats: [

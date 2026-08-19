@@ -35,7 +35,7 @@ export async function generateMetadata({
     description:
       "Beauty Grow（CELESTE・OAK・SPEEDY・Colors Labo・Natural ViVi）の最新募集状況。強化エリア・募集要項・店舗写真・ご紹介実績をまとめた紹介会社様向け情報ボード。",
     openGraph: {
-      title: "Beauty Grow 求人情報ボード",
+      title: config.meta.ogTitle,
       description: config.meta.ogDescription,
       type: "website",
       url: config.meta.ogUrl,
@@ -106,7 +106,7 @@ export default async function BoardPage({
       <header className="hero">
         <p className="hero-eyebrow">{config.hero.eyebrow}</p>
         <h1>
-          Beauty Grow 求人情報ボード
+          {config.hero.heading}
           <span className="thin">{config.hero.addressee}</span>
         </h1>
         <p className="hero-lead">直営約70店舗（美容室 CELESTE・OAK・nicotto／ヘアカラー専門 SPEEDY・Colors Labo／アイラッシュ Natural ViVi ほか）の最新募集状況をまとめています。★は強化度（最大3つ）で、★★★が最優先の急募店舗です。</p>

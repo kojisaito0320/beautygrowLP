@@ -56,10 +56,13 @@ export interface PartnerConfig {
   partnerName: string; // 例: 株式会社グラム（ワークキャンバス）
   meta: {
     title: string;
+    ogTitle: string;
     ogDescription: string;
     ogUrl: string;
   };
   hero: {
+    /** h1 の1行目（例: "Beauty Grow 求人情報ボード"） */
+    heading: string;
     eyebrow: string;
     addressee: string; // h1 の .thin 行
     stats: HeroStat[];

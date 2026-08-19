@@ -5,11 +5,13 @@ export const miraizm: PartnerConfig = {
   slug: "miraizm",
   partnerName: "ミライズム",
   meta: {
-    title: "Beauty Grow 求人情報ボード｜ミライズム様向け",
+    title: "Beauty Grow 求人｜ミライズム様向け",
+    ogTitle: "Beauty Grow 求人",
     ogDescription: "全国約70店舗の最新募集状況・強化エリア・募集要項（ミライズム様向け・毎回更新）",
     ogUrl: "https://beautygrow-lp.vercel.app/miraizm",
   },
   hero: {
+    heading: "Beauty Grow 求人",
     eyebrow: "FOR MIRAIZM PARTNERS",
     addressee: "ミライズム御中｜ご紹介用最新情報",
     stats: [
