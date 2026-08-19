@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>nicotto（ニコット）業態紹介｜おとな美容師のための美容室</title>
+<meta name="description" content="Beauty Growの新業態 nicotto（ニコット）のコンセプトと募集要項。19時閉店・土or日休み確約・年齢不問。紹介会社様向けのご案内ページです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#E8836B;
+  --coral-deep:#C2522F;
+  --peach:#F2A98E;
+  --coral-mist:#FBE9E2;
+  --ivory:#FAF4E8;
+  --white:#FFFFFF;
+  --ink:#463830;
+  --brown:#8A6F5C;
+  --line:#F0DFD2;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:18px;scroll-behavior:smooth}
+body{
+  font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  background:var(--white);color:var(--ink);line-height:2;letter-spacing:.02em;
+}
+.rd{font-family:"M PLUS Rounded 1c","BIZ UDPGothic",sans-serif}
+.en{font-family:"Quicksand","M PLUS Rounded 1c",sans-serif}
+a{color:var(--coral-deep)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.3rem}
+
+/* ===== top note ===== */
+.top-note{background:var(--coral-deep);color:#FFF4EE;font-size:.82rem;text-align:center;padding:.55rem 1rem;letter-spacing:.05em}
+
+/* ===== smile arc dividers ===== */
+.arc{display:block;width:100%;height:56px}
+.arc svg{display:block;width:100%;height:100%}
+
+/* ===== hero ===== */
+.hero{background:var(--ivory);padding:3.8rem 0 2.2rem;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;align-items:center}
+.logo{width:min(340px,80%);margin-bottom:1.1rem}
+.logo svg{width:100%;height:auto;display:block}
+.logo .smile-path{stroke-dasharray:60;stroke-dashoffset:0}
+@media (prefers-reduced-motion: no-preference){
+  .logo .smile-path{animation:smile 1s ease-out .4s backwards}
+  @keyframes smile{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+}
+.hero-eyebrow{font-size:.82rem;letter-spacing:.24em;color:var(--brown);margin-bottom:1.2rem}
+.hero h1{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:clamp(1.9rem,4.2vw,2.7rem);line-height:1.55;letter-spacing:.06em}
+.hero h1 em{font-style:normal;color:var(--coral-deep);white-space:nowrap}
+.hero-lead{margin-top:1.1rem;font-size:1rem;max-width:30rem}
+.hero-facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.fact{background:var(--white);border:2px solid var(--peach);border-radius:2rem;padding:.32rem 1.05rem;font-size:.88rem;font-weight:700;color:var(--coral-deep)}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:999px 999px 24px 24px}
+.hero-photo figcaption{font-size:.78rem;color:var(--brown);margin-top:.6rem;text-align:center}
+@media(max-width:760px){
+  .hero{padding:2.6rem 0 1.8rem}
+  .hero-grid{grid-template-columns:1fr;gap:1.8rem}
+  .hero-photo img{aspect-ratio:4/3.4}
+}
+
+/* ===== sections ===== */
+section{padding:3.2rem 0}
+.bg-ivory{background:var(--ivory)}
+.bg-mist{background:var(--coral-mist)}
+.sec-head{margin-bottom:1.7rem}
+.sec-head .tag{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.22em;color:var(--coral-deep);background:var(--white);border:2px solid var(--peach);border-radius:2rem;padding:.1rem 1rem;margin-bottom:.8rem}
+.bg-ivory .sec-head .tag,.bg-mist .sec-head .tag{background:var(--white)}
+.sec-head h2{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1.6rem;line-height:1.6;letter-spacing:.05em}
+.lead{max-width:46rem}
+.lead p+p{margin-top:.9rem}
+.lead b{color:var(--coral-deep)}
+
+/* smile bullets */
+.smile-list{list-style:none;max-width:44rem}
+.smile-list li{position:relative;padding-left:2rem;margin-bottom:.5rem}
+.smile-list li::before{
+  content:"";position:absolute;left:0;top:.62em;width:1.15em;height:1.15em;
+  border:3px solid var(--coral);border-radius:50%;
+  background:radial-gradient(circle at 50% 28%, transparent 55%, transparent 0);
+}
+.smile-list li::after{
+  content:"";position:absolute;left:.28em;top:1.18em;width:.62em;height:.3em;
+  border-bottom:3px solid var(--coral);border-radius:0 0 50% 50%/0 0 100% 100%;
+}
+
+/* ===== empathy ===== */
+.empathy{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem;margin-top:1.8rem}
+.emp{background:var(--white);border-radius:20px;padding:1.5rem 1.4rem;box-shadow:0 4px 18px rgba(200,130,100,.10)}
+.emp .q{font-weight:700;font-size:1rem;line-height:1.8;color:var(--ink)}
+.emp .q::before{content:"“";color:var(--peach);font-family:Quicksand;font-size:1.6rem;line-height:0;margin-right:.15rem}
+.emp .a{margin-top:.8rem;font-size:.92rem;color:var(--brown);border-top:2px dashed var(--line);padding-top:.8rem}
+.emp .a b{color:var(--coral-deep)}
+
+/* ===== customers ===== */
+.cust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin-top:1.8rem}
+.cust{background:var(--white);border-radius:18px;padding:1.3rem 1.3rem;border:1px solid var(--line)}
+.cust h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1rem;color:var(--coral-deep);margin-bottom:.45rem}
+.cust p{font-size:.9rem;color:var(--brown);line-height:1.9}
+.photo-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem;margin-top:2rem}
+.photo-row figure{background:var(--white);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.photo-row img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.photo-row figcaption{font-size:.8rem;color:var(--brown);padding:.55rem .9rem;line-height:1.7}
+
+/* ===== day timeline ===== */
+.day{list-style:none;max-width:42rem;margin-top:2rem}
+.day li{position:relative;padding:0 0 2rem 5.4rem}
+.day .t{position:absolute;left:0;top:.1rem;font-family:Quicksand,sans-serif;font-weight:700;font-size:1.25rem;color:var(--coral-deep);width:4.2rem}
+.day li::before{content:"";position:absolute;left:4.55rem;top:.45rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--coral)}
+.day li:not(:last-child)::after{content:"";position:absolute;left:4.87rem;top:1.4rem;bottom:.2rem;width:3px;border-radius:3px;background:var(--coral-mist)}
+.day b{display:block;font-size:1rem}
+.day span{font-size:.88rem;color:var(--brown)}
+.day li{padding-left:6.4rem}
+.day li::before{left:5.4rem}
+.day li:not(:last-child)::after{left:5.72rem}
+
+/* ===== pillars(promise) ===== */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;margin-top:1.9rem}
+.pillar{background:var(--white);border-radius:20px;padding:1.6rem 1.5rem;box-shadow:0 4px 18px rgba(200,130,100,.10)}
+.pillar .big{font-family:Quicksand,"M PLUS Rounded 1c",sans-serif;font-weight:700;font-size:2rem;color:var(--coral);line-height:1.2}
+.pillar .big small{font-size:1rem;color:var(--brown);font-family:"M PLUS Rounded 1c",sans-serif}
+.pillar h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1.02rem;margin:.5rem 0 .55rem}
+.pillar p{font-size:.9rem;color:var(--brown);line-height:1.9}
+
+/* ===== stores ===== */
+.stores{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-top:1.7rem}
+.store{background:var(--white);border-radius:18px;padding:1.2rem 1.3rem;border:1px solid var(--line)}
+.store h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1.02rem;margin-bottom:.3rem}
+.store p{font-size:.85rem;color:var(--brown);line-height:1.8}
+.store .open{display:inline-block;font-size:.76rem;font-weight:700;color:var(--white);background:var(--coral);border-radius:2rem;padding:.12rem .8rem;margin-bottom:.55rem}
+.store-note{font-size:.85rem;color:var(--brown);margin-top:1.2rem}
+
+/* ===== youken ===== */
+.koyou{background:var(--white);border:1px solid var(--line);border-radius:20px;margin-top:1.6rem;overflow:hidden}
+.koyou>h3{font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;font-size:1.15rem;padding:1rem 1.5rem;background:var(--coral-mist);color:var(--coral-deep)}
+.koyou dl{display:grid;grid-template-columns:10.5rem 1fr;font-size:.95rem}
+.koyou dt{padding:.85rem 1.5rem;font-weight:700;color:var(--brown);border-top:1px solid var(--line);background:#FFFBF6}
+.koyou dd{padding:.85rem 1.5rem;border-top:1px solid var(--line);line-height:1.9}
+.koyou b{color:var(--coral-deep)}
+@media(max-width:640px){
+  .koyou dl{grid-template-columns:1fr}
+  .koyou dt{padding-bottom:.1rem}
+  .koyou dd{padding-top:.15rem;border-top:none}
+}
+
+/* ===== tables ===== */
+.table-scroll{overflow-x:auto;margin-top:1.3rem;-webkit-overflow-scrolling:touch}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:560px;background:var(--white);font-size:.92rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+caption{caption-side:top;text-align:left;font-weight:700;font-size:.95rem;padding-bottom:.5rem}
+th,td{border-bottom:1px solid var(--line);padding:.62rem .9rem;text-align:left;line-height:1.7}
+thead th{background:var(--coral-mist);color:var(--coral-deep);font-size:.86rem}
+tbody tr:last-child td{border-bottom:none}
+td.num{text-align:right;font-family:Quicksand,sans-serif;font-weight:600;white-space:nowrap}
+.tbl-note{font-size:.82rem;color:var(--brown);margin-top:.6rem;line-height:1.8}
+.allow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin-top:1.4rem}
+.allow div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:.85rem 1.1rem;font-size:.9rem;line-height:1.8}
+.allow b{display:block;color:var(--coral-deep)}
+.award-fig{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;align-items:center;margin-top:1.6rem;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.award-fig img{width:100%;height:100%;object-fit:cover}
+.award-fig p{padding:1.2rem 1.4rem;font-size:.9rem;color:var(--brown);line-height:1.9}
+@media(max-width:640px){.award-fig{grid-template-columns:1fr}}
+
+/* ===== message ===== */
+.msg{background:var(--white);border-radius:22px;padding:2rem 2.2rem;margin-top:1.8rem;max-width:47rem;box-shadow:0 4px 18px rgba(200,130,100,.10)}
+.msg p{font-size:.95rem;line-height:2.1}
+.msg p+p{margin-top:1rem}
+.msg .sign{text-align:right;font-family:"M PLUS Rounded 1c",sans-serif;font-weight:800;margin-top:1.4rem}
+@media(max-width:640px){.msg{padding:1.5rem 1.3rem}}
+
+/* ===== QA ===== */
+.qa{margin-top:1.4rem;max-width:46rem}
+.qa details{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-bottom:.8rem}
+.qa summary{cursor:pointer;padding:1rem 3rem 1rem 1.4rem;font-weight:700;font-size:.98rem;list-style:none;position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"＋";position:absolute;right:1.3rem;top:1rem;color:var(--coral);font-weight:700}
+.qa details[open] summary::after{content:"−"}
+.qa .a{padding:0 1.4rem 1.1rem;font-size:.93rem;color:var(--brown);line-height:1.9}
+
+/* ===== flow ===== */
+.flow{list-style:none;counter-reset:step;margin-top:1.7rem;max-width:40rem}
+.flow li{counter-increment:step;position:relative;padding:0 0 1.6rem 3.6rem;font-size:.98rem;line-height:1.9}
+.flow li::before{content:counter(step);position:absolute;left:0;top:0;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:Quicksand,sans-serif}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:1.2rem;top:2.6rem;bottom:.2rem;width:3px;border-radius:3px;background:var(--coral-mist)}
+.flow b{display:block}
+.flow span{font-size:.87rem;color:var(--brown)}
+.note-box{background:var(--white);border:2px solid var(--peach);border-radius:16px;padding:1.1rem 1.4rem;font-size:.88rem;line-height:1.9;margin-top:1.6rem;max-width:46rem}
+
+/* ===== footer ===== */
+footer{background:var(--ink);color:#F3E9DF;padding:2.6rem 0 3.2rem;font-size:.85rem;line-height:2}
+footer a{color:var(--peach)}
+footer .links{margin-top:.6rem}
+footer .links a{margin-right:1.4rem}
+</style>
+</head>
+<body>
+
+<p class="top-note">大人のための美容室 nicotto ご案内ページです</p>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-eyebrow en">BEAUTY GROW NEW BRAND</p>
+      <div class="logo" role="img" aria-label="nicotto ニコット ロゴ">
+        <svg viewBox="0 0 400 112">
+          <text x="0" y="78" font-family="Quicksand, sans-serif" font-weight="700" font-size="92" letter-spacing="1" fill="#E8836B">nicott</text>
+          <g transform="translate(297,13)">
+            <circle cx="34" cy="39" r="30" fill="none" stroke="#E8836B" stroke-width="13.5"/>
+            <path class="smile-path" d="M21 36 Q34 50 47 36" fill="none" stroke="#E8836B" stroke-width="7" stroke-linecap="round"/>
+          </g>
+          <text x="2" y="107" font-family="'M PLUS Rounded 1c','BIZ UDPGothic',sans-serif" font-weight="700" font-size="16" letter-spacing="8" fill="#8A6F5C">おとな美容師のための美容室</text>
+        </svg>
+      </div>
+      <h1>50歳からが、<em>黄金期。</em></h1>
+      <p class="hero-lead">nicotto（ニコット）は、お客様が思わず<b class="rd">“にこっ”</b>と笑顔になる時間をつくる、50歳以上の女性のお客様のための美容室。そして、長年のご経験を持つ美容師さんが主役になれるお店です。2026年下旬、東京4店舗で新装オープンします。</p>
+      <div class="hero-facts">
+        <span class="fact">19時 閉店</span>
+        <span class="fact">土or日休み 確約</span>
+        <span class="fact">カットはお一人 60分</span>
+        <span class="fact">年齢不問・ブランク不問</span>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <img src="assets/photos/style-mature-bob.jpg" alt="ツヤのあるミセスボブスタイルの仕上がり。後ろ姿" >
+      <figcaption>nicottoが目指す仕上がり（社内実例写真）</figcaption>
+    </figure>
+  </div>
+</header>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,0 Q720,56 1440,0 L1440,0 L0,0 Z" fill="#FAF4E8"/></svg></div>
+
+<section id="empathy">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">VOICE</span><h2>こんな想いを抱えた美容師さん、いませんか</h2></div>
+    <p class="lead">nicottoは、この3つの「あきらめ」をなくすためにつくった業態です。</p>
+    <div class="empathy">
+      <div class="emp">
+        <p class="q">この年齢で応募していいのか、迷ってしまう</p>
+        <p class="a"><b>年齢不問です。</b>お客様の多くが50歳以上だから、同世代の会話力と経験こそが最大の強みになります。あなたの「当たり前」が、ここでは最高のサービスです。</p>
+      </div>
+      <div class="emp">
+        <p class="q">ブランクが長くて、技術についていけるか不安</p>
+        <p class="a"><b>新卒スタイリストと同じ教育プログラム</b>を用意。シャンプー・カラー塗布からの再スタートOK、面談時の技術チェックもありません。</p>
+      </div>
+      <div class="emp">
+        <p class="q">夜遅い営業と体力勝負のスピードがもうつらい</p>
+        <p class="a"><b>19時閉店・カットはお一人60分。</b>掛け持ちで走り回る営業スタイルではありません。土曜か日曜どちらかのお休みも確約します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 Q720,0 1440,56 L1440,56 L0,56 Z" fill="#FAF4E8"/></svg></div>
+
+<section id="customers" class="bg-ivory">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">FOR CUSTOMERS</span><h2>お客様にとってのnicotto</h2></div>
+    <div class="lead">
+      <p>ターゲットは<b>50歳以上の女性のお客様</b>。年齢とともに変わっていく髪──白髪・うねり・ボリューム・パサつき──と向き合い続けられる「かかりつけの美容室」を目指します。</p>
+      <p>メニューは<b>髪質改善美容室CELESTEで培った技術がベース</b>。白髪を活かす・ぼかすグレイカラーにも、オイル主成分のカラー剤「iNOA（イノア）」と「LINK（リンク）」で応えます。客単価10,000円以上の上質・丁寧路線です。</p>
+    </div>
+    <div class="cust-grid">
+      <div class="cust"><h3>60分のマンツーマン</h3><p>カットはお一人60分・掛け持ち接客なし。ゆっくり相談しながら施術を受けられます。</p></div>
+      <div class="cust"><h3>髪と頭皮にやさしい薬剤</h3><p>主力商材は「iNOA」と「LINK」。原材料費は売上の10％以上（業界平均の2倍以上）。</p></div>
+      <div class="cust"><h3>売り込みゼロ</h3><p>必要のないメニューや商品の売り込みは一切しません。本当に必要な提案だけ。</p></div>
+      <div class="cust"><h3>同世代の美容師</h3><p>同じ時代を生きてきた美容師が担当。会話も相談も、同じ目線でできる安心感。</p></div>
+    </div>
+    <div class="photo-row">
+      <figure><img src="assets/photos/inoa-grey-ba-crop.jpg" alt="「もう白髪染めで傷めたくない」iNOAオイルカラーのビフォーアフター" loading="lazy"><figcaption>白髪染めのダメージに悩む世代へ──iNOAオイルカラー（CELESTE販促素材）</figcaption></figure>
+      <figure><img src="assets/photos/inoa-root-ba.jpg" alt="白髪の根元染めビフォーアフター。50代のお客様の頭頂部" loading="lazy"><figcaption>白髪の根元リタッチ実例（CELESTE販促素材）</figcaption></figure>
+      <figure><img src="assets/photos/treatment-hands-iron.jpg" alt="髪質改善施術の手元" loading="lazy"><figcaption>丁寧な施術の手元（社内実写）</figcaption></figure>
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true" style="background:#FAF4E8"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 Q720,0 1440,56 L1440,56 L0,56 Z" fill="#FBE9E2"/></svg></div>
+
+<section id="promise" class="bg-mist">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">PROMISE</span><h2>お客様への3つの約束</h2></div>
+    <p class="lead">Beauty Grow全ブランド共通の約束です。nicottoもこの約束の上に立ちます。</p>
+    <div class="pillars">
+      <div class="pillar">
+        <p class="big en">1</p>
+        <h3>嘘のない、美容を。</h3>
+        <p>罪悪感が生まれるような仕事は一切しません。薬剤を薄めず、材料を惜しまず。「自分の家族にも受けてもらいたいと思える仕事」が品質基準です。</p>
+      </div>
+      <div class="pillar">
+        <p class="big en">2</p>
+        <h3>あなたに“最適解”を。</h3>
+        <p>一人ひとりに合わせた最適解を提案します。商材の種類を減らさず多様な選択肢を用意し、「丁寧さ」と「あなたらしさ」を大切にします。</p>
+      </div>
+      <div class="pillar">
+        <p class="big en">3</p>
+        <h3>笑顔を創る、誠実なサービスを。</h3>
+        <p>必要のない施術や無理な販売は行いません。時には「やらない提案」もします。</p>
+      </div>
+    </div>
+    <div class="note-box" style="background:#fff">
+      <b class="rd" style="color:var(--coral-deep)">経験を、教える力に。</b><br>
+      nicottoでは新卒スタイリストの教育も店舗内で行います。長年の経験と技術を次の世代に伝える<b>「トレーナー」としてのキャリア</b>を積むことができます。施術だけではない、ベテランだからこその活躍の場があります。
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,0 Q720,56 1440,0 L1440,0 L0,0 Z" fill="#FBE9E2"/></svg></div>
+
+<section id="stores">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">STORES</span><h2>店舗とスケジュール</h2></div>
+    <p class="lead">4店舗とも<b>既存店舗を改装しての業態転換</b>です（2026年下旬新装オープン・オープニング募集中）。</p>
+    <div class="stores">
+      <div class="store"><span class="open">2026年下旬 新装オープン</span><h3>nicotto 三軒茶屋店</h3><p>東京都世田谷区太子堂2-19-3 ムサシヤビル2F</p></div>
+      <div class="store"><span class="open">2026年下旬 新装オープン</span><h3>nicotto 門前仲町店</h3><p>東京都江東区富岡1-6-6 ウィステリアコート2F</p></div>
+      <div class="store"><span class="open">2026年下旬 新装オープン</span><h3>nicotto 八王子店</h3><p>東京都八王子市中町2-18 鶴屋ビル4階</p></div>
+      <div class="store"><span class="open">2026年下旬 新装オープン</span><h3>nicotto 高円寺店</h3><p>東京都杉並区高円寺北3-5-19 ウェルロード高円寺2F<br>（高円寺駅近く・既存店の業態転換）</p></div>
+      <div class="store"><span class="open">時期未定</span><h3>西日暮里（予定）</h3><p>買収予定店舗あり・詳細が決まり次第ご案内します</p></div>
+    </div>
+    <div class="photo-row">
+      <figure><img src="assets/photos/interior-bright-celeste.jpg" alt="明るいレンガ調の美容室内観。花と観葉植物" loading="lazy"><figcaption>店舗の雰囲気（参考: 同社既存店）</figcaption></figure>
+      <figure><img src="assets/photos/interior-white-minimal.jpg" alt="白基調のセット面" loading="lazy"><figcaption>セット面（参考: 同社既存店）</figcaption></figure>
+      <figure><img src="assets/photos/interior-setmen-shampoo.jpg" alt="セット面とシャンプー台" loading="lazy"><figcaption>シャンプー設備（参考: 同社既存店）</figcaption></figure>
+    </div>
+    <p class="store-note">営業時間はいずれも 9:00〜19:00。内観は同社既存店の参考写真です。nicotto各店の実写真は改装完了後（2026年下旬予定）に差し替えます。面接地は各店舗または青山本社です。</p>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 Q720,0 1440,56 L1440,56 L0,56 Z" fill="#FAF4E8"/></svg></div>
+
+<section id="youken" class="bg-ivory">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">POSITIONS</span><h2>募集要項（雇用形態別）</h2></div>
+
+    <div class="koyou">
+      <h3>正社員（スタイリスト）</h3>
+      <dl>
+        <dt>給与</dt><dd>月給 196,000円（月140h）〜308,000円（月220h）＋歩合給。勤務時間帯・時間数の選択制（詳細は下の給与テーブル参照）</dd>
+        <dt>勤務日数・体制</dt><dd>週3〜5日／シフト制・時短勤務OK・変形労働時間制</dd>
+        <dt>休日</dt><dd>完全週休2日または月7日休みの選択制。<b>土曜または日曜のどちらかのお休みを確約。</b>産休・育休取得可能</dd>
+        <dt>必要資格・経験</dt><dd>美容師免許／スタイリスト経験（年齢不問・ブランク不問。ブランクのある方は教育プログラムで学び直しできます）</dd>
+        <dt>仕事内容</dt><dd>50歳以上の女性のお客様を中心としたサロンワーク全般（カット・カラー・パーマ・髪質改善・ヘッドスパ）。カットはお一人60分・掛け持ちなし。新卒スタイリストの店舗内教育（トレーナー業務）にも携われます</dd>
+        <dt>福利厚生</dt><dd>社会保険完備／インセンティブあり・ノルマなし／研修制度／育児休暇／賞与（社内AWARDで贈呈）／交通費応相談</dd>
+      </dl>
+    </div>
+
+    <div class="koyou">
+      <h3>パート・アルバイト</h3>
+      <dl>
+        <dt>給与</dt><dd>時給 1,400円〜（全国統一）＋経験歩合・各種手当</dd>
+        <dt>勤務日数・体制</dt><dd>週1〜5日／完全自由シフト・扶養内OK。土日のお休みも相談できます</dd>
+        <dt>必要資格・経験</dt><dd>美容師免許（年齢不問・ブランク不問）。シャンプー・カラー塗布などのアシスタント業務からの再スタートOK</dd>
+        <dt>仕事内容</dt><dd>サロンワーク（できる業務から段階的に）。新卒スタイリストと同じ教育プログラムで、焦らず自分のペースで復帰できます</dd>
+        <dt>福利厚生</dt><dd>社会保険完備（加入要件を満たす場合）／交通費応相談／口コミ手当（500円/件）／物販手当（10〜20％）／社員登用あり／副業・WワークOK／育児休暇</dd>
+      </dl>
+    </div>
+
+    <div class="koyou">
+      <h3>業務委託（スタイリスト）</h3>
+      <dl>
+        <dt>歩合</dt><dd>指名 63％／フリー 51％（税抜売上に対する歩合率）。<b>インボイスは会社負担</b>（CELESTEと同条件）</dd>
+        <dt>勤務日数・体制</dt><dd>週2〜5日／自由出勤。19時閉店のため夜遅くまでの勤務はありません。土曜または日曜のお休みも相談できます</dd>
+        <dt>必要資格・経験</dt><dd>美容師免許／スタイリスト経験</dd>
+        <dt>仕事内容</dt><dd>50歳以上の女性のお客様中心のサロンワーク。同じ時代を生きてきたからこそ分かる会話と技術が、信頼と指名につながります</dd>
+        <dt>その他</dt><dd>店販手当（10〜20％）／口コミ手当（500円/件）／税務サポート／各種講習会（希望者）／正社員への契約変更も相談可</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,0 Q720,56 1440,0 L1440,0 L0,0 Z" fill="#FAF4E8"/></svg></div>
+
+<section id="salary">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">SALARY</span><h2>給与テーブル（正社員・パート）</h2></div>
+    <div class="table-scroll">
+      <table>
+        <caption>月給パターン（東京・2026年版）</caption>
+        <thead><tr><th>区分</th><th>所定労働時間</th><th>基本給（月）</th><th>働き方の目安</th></tr></thead>
+        <tbody>
+          <tr><td>パート</td><td>時間シフト</td><td class="num">時給 1,400円</td><td>週1日〜・扶養内OK</td></tr>
+          <tr><td>時短社員</td><td class="num">125h</td><td class="num">175,000円</td><td>平日15時まで中心</td></tr>
+          <tr><td>時短社員</td><td class="num">140h</td><td class="num">196,000円</td><td>時短×土or日休み</td></tr>
+          <tr><td>社員</td><td class="num">190h</td><td class="num">266,000円</td><td>フルタイム・完全週休2日</td></tr>
+          <tr><td>社員（上限）</td><td class="num">220h</td><td class="num">308,000円</td><td>労働時間選択制の上限</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <caption>経験歩合給（指名売上に応じて基本給に加算）</caption>
+        <thead><tr><th>指名売上（月）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
+        <tbody>
+          <tr><td>30万円</td><td class="num">＋20,000円</td><td class="num">＋22,000円</td><td class="num">＋30,000円</td></tr>
+          <tr><td>50万円</td><td class="num">＋33,000円</td><td class="num">＋37,000円</td><td class="num">＋50,000円</td></tr>
+          <tr><td>70万円</td><td class="num">＋46,000円</td><td class="num">＋52,000円</td><td class="num">＋70,000円</td></tr>
+          <tr><td>90万円</td><td class="num">＋59,000円</td><td class="num">＋66,000円</td><td class="num">＋90,000円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <caption>売上歩合（インセンティブ）— 施術売上に応じて支給</caption>
+        <thead><tr><th>施術売上（月・税抜）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
+        <tbody>
+          <tr><td>70万円</td><td class="num">＋80,000円</td><td class="num">＋59,000円</td><td class="num">0円</td></tr>
+          <tr><td>90万円</td><td class="num">＋160,000円</td><td class="num">＋139,000円</td><td class="num">＋69,000円</td></tr>
+          <tr><td>110万円</td><td class="num">＋240,000円</td><td class="num">＋219,000円</td><td class="num">＋149,000円</td></tr>
+          <tr><td>130万円</td><td class="num">＋320,000円</td><td class="num">＋299,000円</td><td class="num">＋229,000円</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">売上歩合の計算式: 施術売上（税抜）の40％−25,000円が「基本給＋経験歩合給」を上回った額を支給（累計清算）。頑張った分がそのまま報酬に反映されます。</p>
+    <div class="allow">
+      <div><b>口コミ手当</b>1件につき500円</div>
+      <div><b>物販手当</b>販売商品の10〜20％</div>
+      <div><b>美髪マイスターランク報酬</b>取得につき5,000〜10,000円</div>
+      <div><b>役職給</b>店長ランクにより 20,000〜120,000円</div>
+    </div>
+    <div class="award-fig">
+      <img src="assets/photos/award-group-beautygrow.jpg" alt="Beauty Growアワード表彰式の集合写真" loading="lazy">
+      <p><b class="rd">賞与は社内AWARDで。</b>総額1,000万円を表彰者で配分（昨年実績）。頑張りが正しく評価される全社の表彰制度に、nicottoのスタッフも参加します。</p>
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 Q720,0 1440,56 L1440,56 L0,56 Z" fill="#FAF4E8"/></svg></div>
+
+<section id="message" class="bg-ivory">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">MESSAGE</span><h2>代表メッセージ</h2></div>
+    <div class="msg">
+      <p>nicottoは、50歳以上の女性のお客様のための美容室です。そして同時に、50歳からの美容師さんが主役になれる店です。</p>
+      <p>美容業界では、経験豊富な美容師さんが年齢を理由に応募をあきらめたり、子育てや介護でハサミを置いたまま、戻る場所を見つけられずにいます。技術も接客も素晴らしいのに、活躍の場がない。その「当たり前」を変えたくて、この店をつくりました。</p>
+      <p>nicottoのお客様の多くは、あなたと同じ時代を生きてきた方々です。同世代だから分かる会話、長年磨いてきた技術が、そのまま信頼に変わります。最新トレンドを追い続ける必要はありません。あなたの「当たり前」が、ここでは最高のサービスです。</p>
+      <p>私たちが目指すのは「生涯現役美容師」という新しい常識です。ハサミを置いていた年月も、キャリアのうち。お客様も、わたしも、にこっと笑える店を、一緒につくりましょう。</p>
+      <p class="sign">株式会社Beauty Grow 代表取締役　齋藤光司</p>
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,0 Q720,56 1440,0 L1440,0 L0,0 Z" fill="#FAF4E8"/></svg></div>
+
+<section id="qa">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">Q&amp;A</span><h2>候補者様からよくあるご質問</h2></div>
+    <div class="qa">
+      <details open>
+        <summary>Q. 年齢が気になります。何歳まで応募できますか？</summary>
+        <p class="a">年齢不問です。nicottoはお客様の多くが50歳以上の美容室。同世代の美容師さんの経験と会話力こそが、いちばんの強みになります。「50歳からが黄金期」がこの店のコンセプトです。</p>
+      </details>
+      <details>
+        <summary>Q. ブランクが10年以上あります。ついていけるか不安です。</summary>
+        <p class="a">新卒スタイリストと同じ教育プログラムをご用意しています。シャンプー・カラー塗布などのアシスタント業務からの再スタートOK。焦らず自分のペースでカットデビューを目指せます。面談時の技術チェックもありません。</p>
+      </details>
+      <details>
+        <summary>Q. 体力に自信がありません。</summary>
+        <p class="a">カットはお一人60分のゆとりある予約設計。掛け持ちで走り回る営業スタイルではありません。19時閉店で、夜遅くまでの勤務もありません。</p>
+      </details>
+      <details>
+        <summary>Q. 家庭との両立はできますか？</summary>
+        <p class="a">勤務時間は月140〜220hの選択制（時短社員あり）、完全週休2日または月7日休みを選べ、土曜か日曜どちらかのお休みを確約します。パートは完全自由シフト・扶養内OKで、産休・育休も取得できます。</p>
+      </details>
+      <details>
+        <summary>Q. お客様はどんな方ですか？</summary>
+        <p class="a">50歳以上の女性のお客様が中心です。メニューは髪質改善美容室CELESTEで培った技術がベース。必要のないメニューや商品の売り込みは一切しません。</p>
+      </details>
+      <details>
+        <summary>Q. 勤務する店舗は選べますか？</summary>
+        <p class="a">三軒茶屋・門前仲町・八王子・高円寺の4店舗からご希望を伺います。いずれも2026年下旬オープン予定です。</p>
+      </details>
+    </div>
+  </div>
+</section>
+<div class="arc" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 Q720,0 1440,56 L1440,56 L0,56 Z" fill="#FBE9E2"/></svg></div>
+
+<section id="flow" class="bg-mist">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag en">PROCESS</span><h2>ご紹介から入社までの流れ</h2></div>
+    <ol class="flow">
+      <li><b>候補者様のご紹介</b><span>いつもの窓口（担当者・共有シート）からご連絡ください</span></li>
+      <li><b>日程調整 → 本社面談</b><span>私服でOK。ブランクのある方は技術チェックなしの面談のみです</span></li>
+      <li><b>店舗見学（ご希望の方）</b><span>改装完了後（2026年下旬予定）は店舗でのご案内も可能です</span></li>
+      <li><b>入社</b><span>オープニングメンバーとして2026年下旬スタート（入社時期は相談可）</span></li>
+    </ol>
+    <div class="note-box">
+      紹介会社様へ：選考状況の共有・成約実績の記録は、各社の共有スプレッドシート（★更新サマリ／ご紹介者様タブ）で従来どおり運用します。nicottoのご紹介手数料条件は担当者までお問い合わせください。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>株式会社Beauty Grow</b>｜直営70店舗（美容室30／ヘアカラー専門店15／まつげカール専門店25）を運営。nicottoはその新業態です。</p>
+    <p class="links">
+      <a href="https://beautygrow.co.jp" target="_blank" rel="noopener">会社公式サイト</a>
+      <a href="https://beautygrow.co.jp/recruit/" target="_blank" rel="noopener">採用情報・代表メッセージ</a>
+    </p>
+    <p>このページは紹介会社様向けの限定共有です（検索エンジン非掲載）。ロゴ・写真の一部はドラフト・参考素材であり、改装完了後（2026年下旬予定）に実店舗写真へ差し替えます。</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ご紹介一覧（全履歴）｜Beauty Grow × ワークキャンバス</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%82%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#26231f;--sub:#6d675e;--paper:#fbfaf7;--card:#ffffff;--line:#e6e1d8;
+  --brass:#b08a3e;--brass-soft:#f4ecdc;--celeste:#3e5c47;--celeste-soft:#e8efe9;
+  --color:#a1751f;--color-soft:#f5ecd8;--matsuge:#9a5a6e;--matsuge-soft:#f5e7ec;
+  --ok:#2e6b46;--ok-soft:#e3efe7;--ng:#8a5a55;--ng-soft:#f2e6e4;--radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:14px}
+h1{font-family:'Zen Old Mincho',serif;font-size:clamp(20px,4vw,28px);letter-spacing:.05em}
+.wrap{max-width:1080px;margin:0 auto;padding:36px 16px 60px}
+.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--brass);font-weight:700;margin-bottom:10px}
+.lead{color:var(--sub);font-size:13px;margin-top:10px;max-width:680px}
+.back{display:inline-block;margin-top:14px;font-size:13px;color:var(--celeste)}
+.confidential{margin-top:18px;background:var(--brass-soft);border-radius:var(--radius);padding:12px 16px;font-size:12.5px}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 18px;min-width:140px}
+.stat b{font-size:24px;font-family:'Zen Old Mincho',serif;color:var(--celeste);margin-right:2px}
+.stat.gold b{color:var(--brass)}
+.stat span{font-size:11.5px;color:var(--sub);display:block}
+.table-scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+table{border-collapse:collapse;width:100%;min-width:900px;font-size:13px}
+th{background:#f3f0ea;text-align:left;font-size:11.5px;letter-spacing:.05em;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.sortable th{cursor:pointer;user-select:none}
+table.sortable th:hover{color:var(--brass)}
+table.sortable th .dir{color:var(--brass);font-size:10px;margin-left:4px}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.num{font-feature-settings:'tnum';white-space:nowrap}
+.chip{display:inline-block;font-size:11px;font-weight:700;border-radius:4px;padding:1px 7px}
+.chip.celeste{background:var(--celeste-soft);color:var(--celeste)}
+.chip.color{background:var(--color-soft);color:var(--color)}
+.chip.matsuge{background:var(--matsuge-soft);color:var(--matsuge)}
+.st{display:inline-block;font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 10px;white-space:nowrap}
+.st.ok{background:var(--ok-soft);color:var(--ok)}
+.st.ng{background:var(--ng-soft);color:var(--ng)}
+.st.mid{background:var(--brass-soft);color:var(--brass)}
+.note{font-size:12px;color:var(--sub);margin-top:14px}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.filters .f-label{font-size:12px;color:var(--sub);min-width:72px}
+.filters button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 14px;font-size:12.5px;cursor:pointer;font-family:inherit;color:var(--ink)}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sortbar{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:12.5px;color:var(--sub)}
+.sortbar label{white-space:nowrap}
+.sortbar select{font-family:inherit;font-size:12.5px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:11.5px;color:var(--sub)}
+@media (max-width:720px){
+  body{overflow-x:hidden}
+  .sortbar span{display:none}
+  /* referral table becomes stacked cards on phones */
+  table{min-width:0}
+  thead{display:none}
+  tbody tr{display:block;padding:12px 14px;border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  td{display:inline-block;border:none;padding:2px 8px 2px 0;vertical-align:middle}
+  td:nth-child(1){display:block;font-size:11.5px;color:var(--sub)}
+  td:nth-child(2){display:block;font-size:15.5px;font-weight:700;padding-top:2px}
+  td:nth-child(3):not(:empty)::before{content:'ご紹介者: ';color:var(--sub);font-size:11px}
+  td:nth-child(6){display:block;padding-top:4px}
+  .st{white-space:normal;line-height:1.5}
+  td:nth-child(7):not(:empty)::before{content:'面接 ';color:var(--sub);font-size:11px}
+  td:nth-child(8):not(:empty)::before{content:'入社 ';color:var(--sub);font-size:11px}
+  td:nth-child(9):not(:empty)::before{content:'ご紹介料 ';color:var(--sub);font-size:11px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">CONFIDENTIAL — FOR WORK CANVAS</p>
+  <h1>ご紹介一覧（全履歴）</h1>
+  <p class="lead">株式会社グラム（ワークキャンバス）様からのご紹介の全履歴です。選考中・辞退・お断りを含むため、本ページは関係者限りでお願いいたします。最新の進捗は共有スプレッドシート「ご紹介者様」タブと同期しています。</p>
+  <a class="back" href="./">← 求人情報ボードへ戻る</a>
+  <p class="confidential">このページには候補者様の個人情報が含まれます。URL・パスワードの転送、画面の共有・印刷配布はご遠慮ください。</p>
+
+  <div class="stats">
+    <div class="stat"><b>38</b>名<span>累計ご紹介（2025/3〜2026/8）</span></div>
+    <div class="stat gold"><b>11</b>名<span>成約（採用・入社決定）</span></div>
+    <div class="stat"><b>1</b>名<span>選考・調整中</span></div>
+  </div>
+
+  <div class="filters" id="ref-filter" role="group" aria-label="ご紹介者で絞り込み">
+    <span class="f-label">ご紹介者:</span>
+    <button class="on" data-r="all">すべて</button>
+  </div>
+  <div class="filters" id="st-filter" role="group" aria-label="ステータスで絞り込み">
+    <span class="f-label">ステータス:</span>
+    <button class="on" data-s="all">すべて</button>
+    <button data-s="ok">成約</button>
+    <button data-s="mid">選考・調整中</button>
+    <button data-s="ng">辞退・不採用等</button>
+  </div>
+  <div class="sortbar">
+    <label for="sort-select">並び替え:</label>
+    <select id="sort-select">
+      <option value="0:desc">問合せ日（新しい順）</option>
+      <option value="0:asc">問合せ日（古い順）</option>
+      <option value="2:asc">ご紹介者</option>
+      <option value="5:asc">ステータス</option>
+      <option value="7:desc">入社日（新しい順）</option>
+      <option value="8:desc">ご紹介料</option>
+    </select>
+    <span>（PCでは表の見出しクリックでも並び替えできます）</span>
+  </div>
+  <div class="table-scroll">
+  <table class="sortable">
+    <thead><tr><th>問合せ日</th><th>氏名</th><th>ご紹介者</th><th>業態</th><th>店舗・エリア</th><th>ステータス</th><th>面接日</th><th>入社日</th><th>近況・補足</th></tr></thead>
+    <tbody>
+      <tr><td class="num">2025/03/25</td><td>浅井 利江</td><td>工藤様</td><td><span class="chip celeste">美容師</span></td><td>成増</td><td><span class="st ok">採用</span></td><td class="num">3/27</td><td class="num">2025年6月</td><td>在籍中・2025年新人賞受賞、売上80万円突破。懇親会にも積極参加</td></tr>
+      <tr><td class="num">2025/03/27</td><td>高橋 芽衣</td><td>中本様</td><td><span class="chip matsuge">アイ</span></td><td>宮下公園</td><td><span class="st ok">採用→退職</span></td><td class="num">3/28</td><td class="num">2025年4月</td><td>2026年2月退職・勤怠面の課題のため</td></tr>
+      <tr><td class="num">2025/03/27</td><td>奈良原 沙良</td><td>中本様</td><td><span class="chip matsuge">アイ</span></td><td>池袋東口</td><td><span class="st ng">辞退</span></td><td class="num">4/8</td><td></td><td></td></tr>
+      <tr><td class="num">2025/03/29</td><td>中村 莉音</td><td>ー</td><td><span class="chip matsuge">アイ</span></td><td>大名</td><td><span class="st ng">お断り</span></td><td class="num">－</td><td></td><td>充足のため</td></tr>
+      <tr><td class="num">2025/03/31</td><td>比嘉 かれん</td><td>山下様</td><td><span class="chip matsuge">アイ</span></td><td>那覇</td><td><span class="st ng">不採用</span></td><td class="num">4/14</td><td></td><td></td></tr>
+      <tr><td class="num">2025/04/05</td><td>松原 望美</td><td>荒木様</td><td><span class="chip matsuge">アイ</span></td><td>恵比寿</td><td><span class="st ok">採用</span></td><td class="num">4/10</td><td class="num">2025年5月</td><td>在籍中・独立準備のため2026年4月以降シフトインなし</td></tr>
+      <tr><td class="num">2025/04/16</td><td>水沢 拓真</td><td>森田様</td><td><span class="chip celeste">美容師</span></td><td>住吉</td><td><span class="st ng">辞退</span></td><td class="num">5/16</td><td></td><td></td></tr>
+      <tr><td class="num">2025/05/28</td><td>森谷 由佳</td><td>山下様</td><td><span class="chip celeste">美容師</span></td><td>石川町</td><td><span class="st ng">不採用</span></td><td class="num">－</td><td></td><td></td></tr>
+      <tr><td class="num">2025/06/23</td><td>利根川 静香</td><td>工藤様</td><td><span class="chip matsuge">アイ</span></td><td>池袋</td><td><span class="st ng">不採用</span></td><td class="num">7/15</td><td></td><td></td></tr>
+      <tr><td class="num">2025/08/18</td><td>後藤 恵</td><td>山下様</td><td><span class="chip color">カラー</span></td><td>仙川</td><td><span class="st ng">辞退</span></td><td class="num">－</td><td></td><td></td></tr>
+      <tr><td class="num">2025/10/02</td><td>橋本 清典</td><td>荒木様</td><td><span class="chip celeste">美容師</span></td><td>心斎橋</td><td><span class="st ng">不採用</span></td><td class="num">10/8</td><td></td><td></td></tr>
+      <tr><td class="num">2025/10/09</td><td>市村 千春</td><td>中本様</td><td><span class="chip celeste">美容師</span></td><td>住吉</td><td><span class="st ng">辞退</span></td><td class="num">10/16</td><td></td><td></td></tr>
+      <tr><td class="num">2025/10/23</td><td>シュレスタ さつき</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td>町田</td><td><span class="st ok">採用</span></td><td class="num">10/24</td><td class="num">2025年12月</td><td>在籍中・美髪マイスター取得、町田でパート・毎月約100時間勤務</td></tr>
+      <tr><td class="num">2025/12/26</td><td>細川 あきこ</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td>なんば</td><td><span class="st ng">辞退</span></td><td class="num">12/29</td><td></td><td></td></tr>
+      <tr><td class="num">2026/01/07</td><td>今関 佑衣</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td>なんば</td><td><span class="st ng">不採用</span></td><td class="num">2/10</td><td></td><td>転職活動終了</td></tr>
+      <tr><td class="num">2026/01/12</td><td>森谷 由佳</td><td>山下様</td><td><span class="chip celeste">美容師</span></td><td>高円寺</td><td><span class="st ng">辞退</span></td><td class="num">1/16</td><td></td><td></td></tr>
+      <tr><td class="num">2026/02/09</td><td>藤井 まきこ</td><td>齋藤様</td><td><span class="chip celeste">美容師</span></td><td>門前仲町</td><td><span class="st ng">お断り</span></td><td></td><td></td><td></td></tr>
+      <tr><td class="num">2026/02/23</td><td>鶴岡 舞</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td>小岩</td><td><span class="st ng">辞退</span></td><td class="num">3/3</td><td></td><td></td></tr>
+      <tr><td class="num">2026/03/11</td><td>境野 紘子</td><td>齋藤様</td><td><span class="chip celeste">美容師</span></td><td>心斎橋</td><td><span class="st ok">採用</span></td><td class="num">3/27</td><td></td><td>2026年5月入社・在籍中。月70時間勤務（約30万円売上）</td></tr>
+      <tr><td class="num">2026/03/16</td><td>奥山 考香</td><td>齋藤様</td><td><span class="chip celeste">美容師</span></td><td>なんば</td><td><span class="st ok">採用</span></td><td class="num">3/23</td><td></td><td>2026年7月入社・在籍中。なんば店2ヶ月目、基礎研修・MTGに参加</td></tr>
+      <tr><td class="num">2026/03/21</td><td>田代 海音</td><td>齋藤様</td><td><span class="chip color">カラー</span></td><td>高円寺</td><td><span class="st ng">不採用</span></td><td class="num">3/26</td><td></td><td></td></tr>
+      <tr><td class="num">2026/03/23</td><td>中島 愛里</td><td>齋藤様</td><td><span class="chip celeste">美容師</span></td><td>石川町</td><td><span class="st ng">不採用</span></td><td class="num">4/6</td><td></td><td>転職時期未定</td></tr>
+      <tr><td class="num">2026/03/28</td><td>鈴木 貴美</td><td>森田様</td><td><span class="chip celeste">美容師</span></td><td>成増</td><td><span class="st ng">不採用</span></td><td class="num">4/1</td><td></td><td></td></tr>
+      <tr><td class="num">2026/03/30</td><td>中村 梨亜</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td>なんば</td><td><span class="st ok">採用</span></td><td class="num">4/6</td><td></td><td>2026年7月入社・在籍中。なんば店2ヶ月目、基礎研修・MTGに参加</td></tr>
+      <tr><td class="num">2026/04/01</td><td>北原 雅貴</td><td>近藤様</td><td><span class="chip celeste">美容師</span></td><td>博多</td><td><span class="st ng">お断り</span></td><td class="num">－</td><td></td><td></td></tr>
+      <tr><td class="num">2026/04/06</td><td>菱本 早余子</td><td></td><td><span class="chip celeste">美容師</span></td><td>十三</td><td><span class="st ng">お断り</span></td><td class="num">－</td><td></td><td>顧客50名なしのため</td></tr>
+      <tr><td class="num">2026/04/22</td><td>小谷 彩也香</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td></td><td><span class="st ng">お断り</span></td><td class="num">－</td><td></td><td></td></tr>
+      <tr><td class="num">2026/05/17</td><td>清水 順子</td><td></td><td><span class="chip color">カラー</span></td><td>五反田</td><td><span class="st ng">お断り</span></td><td class="num">－</td><td></td><td>ブランクが長いため</td></tr>
+      <tr><td class="num">2026/05/19</td><td>小原 優希</td><td>荒木様</td><td><span class="chip matsuge">アイ</span></td><td>池袋東口</td><td><span class="st ok">内定</span></td><td class="num">6/1</td><td class="num">2026/6/1</td><td>10月に内定者懇談会参加予定</td></tr>
+      <tr><td class="num">2026/05/21</td><td>濱口 真希</td><td></td><td><span class="chip matsuge">アイ</span></td><td>恵比寿</td><td><span class="st ng">不採用</span></td><td class="num">6/2</td><td></td><td></td></tr>
+      <tr><td class="num">2026/06/04</td><td>松野 麻優</td><td>山下様</td><td><span class="chip celeste">美容師</span></td><td>高円寺</td><td><span class="st ok">内定</span></td><td class="num">6/4</td><td></td><td>入社は2027年7月予定</td></tr>
+      <tr><td class="num">2026/06/09</td><td>岩崎 美優</td><td></td><td><span class="chip matsuge">アイ</span></td><td>五反田</td><td><span class="st ng">不採用</span></td><td class="num">7/3</td><td></td><td>他サロン検討のまま終了</td></tr>
+      <tr><td class="num">2026/06/21</td><td>渡邊 春那</td><td>森田様</td><td><span class="chip matsuge">アイ</span></td><td>池袋</td><td><span class="st ng">辞退</span></td><td></td><td></td><td>面接1時間前キャンセル</td></tr>
+      <tr><td class="num">2026/06/27</td><td>荒井 菜々子</td><td>工藤様</td><td><span class="chip matsuge">アイ</span></td><td>池袋</td><td><span class="st ng">辞退</span></td><td></td><td></td><td>前日キャンセル</td></tr>
+      <tr><td class="num">2026/06/30</td><td>深町 萌香</td><td>山下様</td><td><span class="chip matsuge">アイ</span></td><td>池袋</td><td><span class="st ok">採用</span></td><td class="num">7/1</td><td class="num">2026年7月</td><td>2026年7月入社・在籍中。池袋店2ヶ月目、基礎研修・MTGに参加</td></tr>
+      <tr><td class="num">2026/07/10</td><td>水上 かおり</td><td>矢澤様</td><td><span class="chip celeste">美容師</span></td><td>阿佐ヶ谷</td><td><span class="st mid">選考中</span></td><td></td><td></td><td>面接日程調整中</td></tr>
+      <tr><td class="num">2026/07/18</td><td>梅澤 遼</td><td>山下様</td><td><span class="chip celeste">美容師</span></td><td>成増</td><td><span class="st ok">内定</span></td><td></td><td class="num">2026年10月予定</td><td>2026年10月入社予定（業務委託）</td></tr>
+      <tr><td class="num">2026/07/19</td><td>前田 佳奈美</td><td>齋藤様</td><td><span class="chip matsuge">アイ</span></td><td>博多</td><td><span class="st ng">不採用</span></td><td></td><td></td><td>連絡つかず</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note">※ 2026/8/17時点・共有スプレッドシート「ご紹介者様」タブより転記。ステータスの原文・補足は同タブをご確認ください。<br>※ 列の見出しをクリックすると並び替えできます（もう一度クリックで昇順⇄降順）。</p>
+
+  <footer>
+    <p>本ページは株式会社Beauty Growと株式会社グラム（ワークキャンバス）様の人材紹介取引に関する機密資料です。候補者様の個人情報を含むため、取り扱いにご注意ください。｜最終更新 2026年8月17日</p>
+  </footer>
+</div>
+<script>
+// click a column header to sort (toggles asc/desc)
+document.querySelectorAll('table.sortable').forEach(function(tbl){
+  var ths = tbl.querySelectorAll('thead th');
+  ths.forEach(function(th, idx){
+    th.setAttribute('title', 'クリックで並び替え');
+    th.tabIndex = 0;
+    th.setAttribute('role', 'button');
+    th.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); th.click(); } });
+    th.addEventListener('click', function(){
+      var tbody = tbl.querySelector('tbody');
+      var asc = th.dataset.dir !== 'asc';
+      ths.forEach(function(h){ delete h.dataset.dir; var d = h.querySelector('.dir'); if (d) d.remove(); });
+      th.dataset.dir = asc ? 'asc' : 'desc';
+      ths.forEach(function(h){ h.removeAttribute('aria-sort'); });
+      th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+      var mark = document.createElement('span');
+      mark.className = 'dir';
+      mark.textContent = asc ? '▲' : '▼';
+      th.appendChild(mark);
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort(function(a, b){
+        var av = (a.children[idx] ? a.children[idx].textContent : '').trim();
+        var bv = (b.children[idx] ? b.children[idx].textContent : '').trim();
+        // empty values always sink to the bottom regardless of direction
+        if (!av && !bv) return 0;
+        if (!av) return 1;
+        if (!bv) return -1;
+        var an = parseFloat(av.replace(/[^0-9.]/g, ''));
+        var bn = parseFloat(bv.replace(/[^0-9.]/g, ''));
+        var bothNum = !isNaN(an) && !isNaN(bn) && /^[0-9]/.test(av) && /^[0-9]/.test(bv);
+        var r = bothNum ? an - bn : av.localeCompare(bv, 'ja');
+        return asc ? r : -r;
+      });
+      rows.forEach(function(r){ tbody.appendChild(r); });
+    });
+  });
+});
+
+// ---- referrer / status filters (multi-select) + sort dropdown ----
+(function(){
+  var tbl = document.querySelector('table.sortable');
+  var rows = Array.from(tbl.querySelectorAll('tbody tr'));
+  var refName = function(tr){
+    var t = (tr.children[2].textContent || '').trim();
+    return (!t || t === 'ー') ? '記載なし' : t;
+  };
+  // build referrer buttons with counts, ordered by count desc
+  var counts = {};
+  rows.forEach(function(tr){ var n = refName(tr); counts[n] = (counts[n] || 0) + 1; });
+  var refGroup = document.getElementById('ref-filter');
+  Object.keys(counts).sort(function(a, b){ return counts[b] - counts[a]; }).forEach(function(name){
+    var b = document.createElement('button');
+    b.dataset.r = name;
+    b.textContent = name + '（' + counts[name] + '）';
+    refGroup.appendChild(b);
+  });
+
+  var sel = { r: [], s: [] };
+  function apply(){
+    rows.forEach(function(tr){
+      var okR = sel.r.length === 0 || sel.r.indexOf(refName(tr)) !== -1;
+      var st = tr.querySelector('.st');
+      var cls = st && st.classList.contains('ok') ? 'ok' : (st && st.classList.contains('mid') ? 'mid' : 'ng');
+      var okS = sel.s.length === 0 || sel.s.indexOf(cls) !== -1;
+      tr.style.display = (okR && okS) ? '' : 'none';
+    });
+  }
+  [['ref-filter', 'r'], ['st-filter', 's']].forEach(function(pair){
+    var group = document.getElementById(pair[0]);
+    var key = pair[1];
+    group.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      var val = btn.dataset.r !== undefined ? btn.dataset.r : btn.dataset.s;
+      if (val === 'all') { sel[key].length = 0; }
+      else {
+        var i = sel[key].indexOf(val);
+        i === -1 ? sel[key].push(val) : sel[key].splice(i, 1);
+      }
+      group.querySelectorAll('button').forEach(function(b){
+        var v = b.dataset.r !== undefined ? b.dataset.r : b.dataset.s;
+        b.classList.toggle('on', v === 'all' ? sel[key].length === 0 : sel[key].indexOf(v) !== -1);
+      });
+      apply();
+    });
+  });
+
+  // sort dropdown (works on mobile where the table header is hidden)
+  var ths = tbl.querySelectorAll('thead th');
+  document.getElementById('sort-select').addEventListener('change', function(){
+    var parts = this.value.split(':');
+    var th = ths[parseInt(parts[0], 10)];
+    var dir = parts[1];
+    if (th.dataset.dir === dir) return;
+    th.click();
+    if (th.dataset.dir !== dir) th.click();
+  });
+})();
+</script>
+</body>
+</html>

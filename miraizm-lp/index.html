@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Beauty Grow 求人情報ボード｜ミライズム様向け</title>
+<meta name="description" content="Beauty Grow（CELESTE・OAK・SPEEDY・Colors Labo・Natural ViVi）の最新募集状況。強化エリア・募集要項・店舗写真・ご紹介実績をまとめた紹介会社様向け情報ボード。">
+<meta property="og:title" content="Beauty Grow 求人情報ボード">
+<meta property="og:description" content="全国約70店舗の最新募集状況・強化エリア・募集要項（ミライズム様向け・毎回更新）">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bg-recruit-miraizm.vercel.app/">
+<meta property="og:site_name" content="Beauty Grow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%82%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#26231f;
+  --sub:#6d675e;
+  --paper:#fbfaf7;
+  --card:#ffffff;
+  --line:#e6e1d8;
+  --brass:#b08a3e;
+  --brass-soft:#f4ecdc;
+  --celeste:#3e5c47;
+  --celeste-soft:#e8efe9;
+  --color:#a1751f;
+  --color-soft:#f5ecd8;
+  --matsuge:#9a5a6e;
+  --matsuge-soft:#f5e7ec;
+  --oak:#7a5b3a;
+  --oak-soft:#f0e8de;
+  --nicotto:#b5623d;
+  --nicotto-soft:#f8e9e1;
+  --radius:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;font-size:15px}
+img{max-width:100%;display:block}
+a{color:var(--celeste)}
+h1,h2,h3{font-family:'Zen Old Mincho',serif;line-height:1.4}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px;overflow-x:auto;white-space:nowrap}
+.nav-brand{font-family:'Zen Old Mincho',serif;font-weight:700;font-size:15px;letter-spacing:.06em}
+.nav a{color:var(--ink);text-decoration:none;font-size:13px;padding:4px 2px;border-bottom:2px solid transparent}
+.nav a:hover,.nav a:focus-visible{border-bottom-color:var(--brass)}
+
+/* hero */
+.hero{max-width:1080px;margin:0 auto;padding:52px 16px 36px}
+.hero-eyebrow{font-size:12px;letter-spacing:.22em;color:var(--brass);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(26px,4.6vw,40px);font-weight:700;letter-spacing:.04em}
+.hero h1 .thin{display:block;font-size:.5em;font-weight:600;color:var(--sub);margin-top:10px;letter-spacing:.12em}
+.hero-lead{margin-top:18px;max-width:640px;color:var(--sub)}
+.hero-stats{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 20px;min-width:150px}
+.stat b{font-size:26px;font-family:'Zen Old Mincho',serif;color:var(--celeste);font-feature-settings:'tnum';margin-right:2px}
+.stat span{font-size:12px;color:var(--sub);display:block;margin-top:2px}
+.stat.gold b{color:var(--brass)}
+.updated{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:var(--brass-soft);border-radius:999px;padding:6px 16px;font-size:13px;font-weight:500}
+.updated::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--brass)}
+
+/* sections */
+section{max-width:1080px;margin:0 auto;padding:44px 16px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:22px}
+.sec-head h2{font-size:clamp(20px,3vw,26px);letter-spacing:.06em}
+.sec-head .en{font-size:11px;letter-spacing:.2em;color:var(--sub)}
+.note{font-size:12.5px;color:var(--sub)}
+
+/* brand chips */
+.chip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:4px;padding:2px 8px;letter-spacing:.04em}
+.chip.celeste{background:var(--celeste-soft);color:var(--celeste)}
+.chip.color{background:var(--color-soft);color:var(--color)}
+.chip.matsuge{background:var(--matsuge-soft);color:var(--matsuge)}
+.chip.oak{background:var(--oak-soft);color:var(--oak)}
+.chip.nicotto{background:var(--nicotto-soft);color:var(--nicotto)}
+.nicotto-banner{display:block;background:var(--nicotto-soft);color:var(--nicotto);text-decoration:none;font-weight:700;text-align:center;padding:.85rem 1.2rem;font-size:.95rem;border-bottom:1px solid #e8cebf}
+.nicotto-banner b{background:var(--nicotto);color:#fff;border-radius:3px;padding:.05rem .5rem;margin-right:.6rem;font-size:.8rem}
+.nicotto-banner:hover{filter:brightness(.97)}
+.nav a.nav-nicotto{color:var(--nicotto);font-weight:700}
+.chip.form{background:#efedea;color:var(--sub);font-weight:500}
+.stars{color:var(--brass);letter-spacing:.05em;font-size:13px}
+
+/* summary cards */
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.sum-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.sum-card h3{font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sum-card h3::before{content:'';width:4px;height:16px;background:var(--brass);border-radius:2px}
+.sum-card ul{list-style:none}
+.sum-card li{padding:4px 0;font-size:13.5px;border-bottom:1px dashed var(--line)}
+.sum-card li:last-child{border-bottom:none}
+.sum-card li b{color:var(--celeste)}
+
+/* filter + table */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
+.filters .f-label{font-size:12px;color:var(--sub);min-width:64px}
+.filters button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer;font-family:inherit;color:var(--ink)}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.table-scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+table{border-collapse:collapse;width:100%;min-width:840px;font-size:13.5px}
+th{background:#f3f0ea;text-align:left;font-size:12px;letter-spacing:.05em;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.sortable th{cursor:pointer;user-select:none}
+table.sortable th:hover{color:var(--brass)}
+table.sortable th .dir{color:var(--brass);font-size:10px;margin-left:4px}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td .shop{font-weight:700}
+td a{font-size:12.5px}
+.num{font-feature-settings:'tnum';text-align:center}
+
+/* youken */
+.brand-block{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:18px;overflow:hidden}
+.brand-block>h3{padding:16px 20px;font-size:17px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;border-left:5px solid var(--brass)}
+.brand-block.b-celeste>h3{border-left-color:var(--celeste)}
+.brand-block.b-color>h3{border-left-color:var(--color)}
+.brand-block.b-matsuge>h3{border-left-color:var(--matsuge)}
+.brand-block.b-oak>h3{border-left-color:var(--oak)}
+.brand-block.b-nicotto>h3{border-left-color:var(--nicotto)}
+.brand-block>h3 small{font-family:'Noto Sans JP';font-size:12px;color:var(--sub);font-weight:400}
+details{border-top:1px solid var(--line)}
+summary{cursor:pointer;padding:13px 20px;font-weight:700;font-size:14px;list-style:none;display:flex;align-items:center;gap:10px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'＋';margin-left:auto;color:var(--brass);font-weight:400}
+details[open] summary::after{content:'－'}
+.d-body{padding:0 20px 18px;font-size:13.5px;color:#3d3a34}
+.d-body h4{font-family:'Noto Sans JP';font-size:13px;color:var(--celeste);margin:14px 0 4px}
+.d-body ul{padding-left:1.2em;margin:4px 0}
+.d-body li{margin:2px 0}
+.d-body .fine{font-size:12px;color:var(--sub)}
+.d-body .table-scroll{margin:8px 0}
+.d-body table{min-width:520px;font-size:12.5px}
+.d-body table th{font-size:11.5px;padding:7px 10px}
+.d-body table td{padding:7px 10px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin:6px 0}
+.kv dt{font-weight:700;white-space:nowrap}
+
+/* intro (referrals) */
+.ref-stats{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.privacy{background:var(--brass-soft);border-radius:var(--radius);padding:12px 16px;font-size:12.5px;margin-top:14px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.ph{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.ph img{width:100%;height:170px;object-fit:cover}
+.ph figcaption{padding:8px 12px;font-size:12px;color:var(--sub)}
+.ph figcaption b{display:block;color:var(--ink);font-size:12.5px}
+
+/* interview / links */
+.link-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.link-card{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.link-card:hover,.link-card:focus-visible{border-color:var(--brass)}
+.link-card b{display:block;font-size:14.5px;margin-bottom:4px}
+.link-card span{font-size:12.5px;color:var(--sub)}
+.link-card .arrow{color:var(--brass);font-size:12px;display:block;margin-top:8px}
+
+/* company */
+.co-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.co-table{width:100%;min-width:0;font-size:13.5px}
+.co-table th{width:9em;background:transparent;border-bottom:1px dashed var(--line);font-weight:700;vertical-align:top}
+.co-table td{border-bottom:1px dashed var(--line)}
+.timeline{list-style:none}
+.timeline li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:5px 0;font-size:13px;border-bottom:1px dashed var(--line)}
+.timeline li b{color:var(--brass);font-feature-settings:'tnum'}
+.philosophy{margin-top:18px;font-family:'Zen Old Mincho',serif;font-size:17px;letter-spacing:.08em;border-left:4px solid var(--brass);padding-left:14px}
+
+footer{border-top:1px solid var(--line);margin-top:30px}
+.foot-inner{max-width:1080px;margin:0 auto;padding:28px 16px;font-size:12px;color:var(--sub)}
+
+@media (max-width:720px){
+  .co-grid{grid-template-columns:1fr}
+  .hero{padding-top:36px}
+  /* store table becomes stacked cards on phones */
+  #store-table{min-width:0}
+  #store-table thead{display:none}
+  #store-table tbody tr{display:block;padding:12px 14px;border-bottom:1px solid var(--line)}
+  #store-table tbody tr:last-child{border-bottom:none}
+  #store-table td{display:inline-block;border:none;padding:2px 8px 2px 0;vertical-align:middle}
+  #store-table td:nth-child(3){display:block;font-size:15.5px;padding-top:4px}
+  #store-table td:nth-child(4){display:block;color:var(--sub);font-size:12.5px;padding-bottom:2px}
+  #store-table td:nth-child(7){display:block;padding-top:2px}
+  #store-table td:nth-child(8):not(:empty){display:block;font-size:12px;color:var(--sub)}
+  #store-table td.num:not(:empty)::before{content:'募集 '}
+  #store-table td.num:not(:empty)::after{content:'名'}
+  #ref-table{min-width:560px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}
+@media print{
+  .nav,.filters{display:none}
+  body{background:#fff}
+  section{padding:20px 0}
+  .table-scroll{overflow:visible;border:none}
+  table{min-width:0;font-size:11px}
+  .ph{break-inside:avoid}
+  details{display:block}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="ページ内メニュー">
+  <div class="nav-inner">
+    <span class="nav-brand">Beauty Grow</span>
+    <a href="#summary">サマリ</a>
+    <a href="#stores">求人中店舗</a>
+    <a href="#youken">募集要項</a>
+    <a href="#salary-growth">給与の推移</a>
+    <a href="#referrals">ご紹介実績</a>
+    <a href="#photos">店舗写真</a>
+    <a href="#interview">インタビュー</a>
+    <a href="#company">会社概要</a>
+    <a class="nav-nicotto" href="https://bg-nicotto.vercel.app" target="_blank" rel="noopener">nicotto業態紹介 ↗</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="hero-eyebrow">FOR MIRAIZM PARTNERS</p>
+  <h1>Beauty Grow 求人情報ボード
+    <span class="thin">ミライズム御中｜ご紹介用最新情報</span>
+  </h1>
+  <p class="hero-lead">直営約70店舗（美容室 CELESTE・OAK・nicotto／ヘアカラー専門 SPEEDY・Colors Labo／アイラッシュ Natural ViVi ほか）の最新募集状況をまとめています。★は強化度（最大3つ）で、★★★が最優先の急募店舗です。</p>
+  <div class="hero-stats">
+    <div class="stat"><b>41</b>店舗<span>求人中の店舗（うち5店はオープン準備中）</span></div>
+    <div class="stat gold"><b>15</b>店舗<span>最優先（★★★）</span></div>
+    <div class="stat"><b>9</b>名<span>ミライズム様ご紹介の成約</span></div>
+  </div>
+  <p class="updated">最終更新 2026年8月18日（募集内容は2026/8/7時点・強化エリアは2026/7月末時点）</p>
+</header>
+
+<a class="nicotto-banner" href="https://bg-nicotto.vercel.app" target="_blank" rel="noopener"><b>NEW</b>新業態「nicotto（ニコット）」の業態紹介ページを公開しました｜コンセプト・募集要項・給与テーブルはこちら →</a>
+
+<section id="summary">
+  <div class="sec-head"><h2>サマリ</h2><span class="en">SUMMARY</span></div>
+  <div class="sum-grid">
+    <div class="sum-card">
+      <h3>ホームページ</h3>
+      <ul>
+        <li><a href="https://beautygrow.co.jp" target="_blank" rel="noopener">株式会社Beauty Grow 公式サイト</a></li>
+        <li class="note">会社の想い・ブランド紹介はこちらから</li>
+      </ul>
+    </div>
+    <div class="sum-card">
+      <h3>求人内容の変更点</h3>
+      <ul>
+        <li>8/18更新：募集内容の変更はありません（2026/8/7時点の内容を継続掲載）</li>
+        <li>新ブランド nicotto（三軒茶屋・門前仲町・八王子）は2026年下旬オープン予定。オープニング募集中。西日暮里にも買収予定店舗あり</li>
+        <li><a href="https://bg-nicotto.vercel.app" target="_blank" rel="noopener"><b>→ nicotto業態紹介ページ</b>（コンセプト・募集要項・給与テーブル）</a></li>
+      </ul>
+    </div>
+    <div class="sum-card">
+      <h3>強化エリアの変更点（★★★）</h3>
+      <ul>
+        <li><b>NEW</b>：nicotto 3店舗（三軒茶屋・門前仲町・八王子）を★★で追加（各3名募集）</li>
+        <li><b>まつげ</b>：沖縄（東京のまつげ店は募集停止。Belle渋谷店は閉店予定）</li>
+        <li><b>カラー</b>：仙川</li>
+        <li><b>セレスト</b>：葛西・住吉・門前仲町・ときわ台・大泉学園・高円寺・成増・川口・福間・小倉・久屋大通（復帰）</li>
+        <li><b>OAK</b>：福間・九大学研都市</li>
+      </ul>
+    </div>
+    <div class="sum-card">
+      <h3>成約者の変更点</h3>
+      <ul>
+        <li><b>NEW</b>：小原様の記録を追加（2025年1月入社→6月退職）。金子様は記録整理のため除外（成約9名に）</li>
+        <li>在籍中: 江黒様・桑江様・川口様・谷崎様（詳細は下表の「その後」参照）</li>
+        <li>富永様 2026年9月入社予定（内定）／鈴木様・眞木様・上地様は退職</li>
+        <li class="note">詳細は「ご紹介実績」をご覧ください</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stores">
+  <div class="sec-head"><h2>求人中の店舗一覧</h2><span class="en">OPEN POSITIONS</span></div>
+  <div class="filters" role="group" aria-label="雇用形態で絞り込み">
+    <span class="f-label">雇用形態:</span>
+    <button class="on" data-f="all">すべて</button>
+    <button data-f="s">正社員</button>
+    <button data-f="p">パート・アルバイト</button>
+    <button data-f="g">業務委託</button>
+  </div>
+  <div class="filters" role="group" aria-label="業態で絞り込み">
+    <span class="f-label">業態:</span>
+    <button class="on" data-b="all">すべて</button>
+    <button data-b="celeste">セレスト</button>
+    <button data-b="oak">OAK</button>
+    <button data-b="nicotto">nicotto</button>
+    <button data-b="matsuge">まつげ</button>
+    <button data-b="color">カラー</button>
+  </div>
+  <div class="filters" role="group" aria-label="採用時期で絞り込み">
+    <span class="f-label">採用時期:</span>
+    <button class="on" data-t="all">すべて</button>
+    <button data-t="now">即戦力</button>
+    <button data-t="later">入社時期が先</button>
+  </div>
+  <div class="filters" role="group" aria-label="エリアで絞り込み">
+    <span class="f-label">エリア:</span>
+    <button class="on" data-a="all">すべて</button>
+    <button data-a="首都圏">首都圏</button>
+    <button data-a="関西">関西</button>
+    <button data-a="名古屋">名古屋</button>
+    <button data-a="九州">九州</button>
+    <button data-a="沖縄">沖縄</button>
+  </div>
+  <div class="table-scroll">
+  <table id="store-table" class="sortable">
+    <thead><tr><th>業態</th><th>エリア</th><th>店舗</th><th>募集形態</th><th>強化</th><th>人数</th><th>リンク</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>京都</td><td class="shop">京都烏丸店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000477099/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>指名のお客様をお持ちの方歓迎</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>神奈川</td><td class="shop">石川町店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000383344/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td></td></tr>
+      <tr data-k="p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">江古田店</td><td>アルバイト・業務委託</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000091428/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>夜に入れる方歓迎</td></tr>
+      <tr data-k="g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">高円寺店</td><td>業務委託（即戦力 45〜60歳歓迎）</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000085668/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>1人営業店舗のため急募</td></tr>
+      <tr data-k="g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">門前仲町店</td><td>業務委託（即戦力 45〜60歳歓迎）</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000242884" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>1人営業店舗のため急募</td></tr>
+      <tr data-k="g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">小岩店</td><td>業務委託のみ</td><td class="stars"></td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000261142/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>移転状況による</td></tr>
+      <tr data-k="p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">阿佐ヶ谷店</td><td>アルバイト・業務委託</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000272289" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>駅直結・ママさん多数</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">ときわ台店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000277202/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>平日も予約が埋まる集客力</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">千歳烏山店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000288436/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>席数が多く入客チャンス大</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">竹ノ塚店</td><td>正社員・アルバイト・業務委託</td><td class="stars"></td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000309052/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>フルフラットシャンプー台</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">成増店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000338006/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>顧客をお持ちの方歓迎</td></tr>
+      <tr data-k="p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">葛西店</td><td>アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">2</td><td><a href="https://beauty.hotpepper.jp/slnH000371444/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>新規・フリーに多く入客可</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">石神井公園店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000386912/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>全社No.1店長の店舗</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">大泉学園店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000451928/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>常勤で入れる方歓迎・スタッフ全員女性</td></tr>
+      <tr data-k="p g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">住吉店</td><td>アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000452964/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>全社No.1店長の店舗・平均給与120%成長</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>埼玉</td><td class="shop">川口店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000459043/" target="_blank" rel="noopener">HPB</a>・<a href="#youken">募集要項</a></td><td>2025年2月リニューアル</td></tr>
+      <tr data-k="g"><td><span class="chip celeste">セレスト</span></td><td>東京</td><td class="shop">三軒茶屋店</td><td>業務委託（即戦力 45〜60歳歓迎）</td><td class="stars">★★★</td><td class="num">1</td><td></td><td>週1勤務は不可</td></tr>
+      <tr data-k="s p g"><td><span class="chip celeste">セレスト</span></td><td>名古屋</td><td class="shop">久屋大通店</td><td>業務委託ほか</td><td class="stars">★★★</td><td class="num">1</td><td></td><td></td></tr>
+      <tr data-k="p g"><td><span class="chip celeste">セレスト</span></td><td>九州</td><td class="shop">小倉店</td><td>アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td></td><td>週1勤務は不可</td></tr>
+      <tr data-k="p g"><td><span class="chip celeste">セレスト</span></td><td>九州</td><td class="shop">福間店</td><td>アルバイト・業務委託</td><td class="stars">★★★</td><td class="num">1</td><td></td><td>週1勤務は不可</td></tr>
+      <tr data-k="s p g" data-t="later"><td><span class="chip nicotto">nicotto</span></td><td>東京</td><td class="shop">nicotto 三軒茶屋店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★</td><td class="num">3</td><td><a href="#youken">募集要項</a></td><td>2026年下旬オープン予定・オープニング募集</td></tr>
+      <tr data-k="s p g" data-t="later"><td><span class="chip nicotto">nicotto</span></td><td>東京</td><td class="shop">nicotto 門前仲町店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★</td><td class="num">3</td><td><a href="#youken">募集要項</a></td><td>2026年下旬オープン予定・オープニング募集</td></tr>
+      <tr data-k="s p g" data-t="later"><td><span class="chip nicotto">nicotto</span></td><td>東京</td><td class="shop">nicotto 八王子店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★</td><td class="num">3</td><td><a href="#youken">募集要項</a></td><td>2026年下旬オープン予定・オープニング募集</td></tr>
+      <tr data-k="s p g" data-t="later"><td><span class="chip nicotto">nicotto</span></td><td>東京</td><td class="shop">nicotto 高円寺店</td><td>正社員・アルバイト・業務委託</td><td class="stars">★★</td><td class="num">3</td><td><a href="#youken">募集要項</a></td><td>2026年下旬オープン予定・オープニング募集</td></tr>
+      <tr data-k="s p g" data-t="later"><td><span class="chip nicotto">nicotto</span></td><td>東京</td><td class="shop">nicotto 西日暮里店</td><td>正社員・アルバイト・業務委託</td><td class="stars"></td><td class="num"></td><td><a href="#youken">募集要項</a></td><td>買収予定店舗・オープン時期は確定次第ご案内</td></tr>
+      <tr data-k="p g"><td><span class="chip oak">OAK</span></td><td>九州</td><td class="shop">OAK hair calmu 福間店</td><td>業務委託・アルバイト</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000390559/" target="_blank" rel="noopener">HPB</a></td><td></td></tr>
+      <tr data-k="p g"><td><span class="chip oak">OAK</span></td><td>九州</td><td class="shop">パルフェ by OAK 九大学研都市店</td><td>業務委託・アルバイト</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000408627/" target="_blank" rel="noopener">HPB</a></td><td>夜に働ける方歓迎</td></tr>
+      <tr data-k="g"><td><span class="chip oak">OAK</span></td><td>九州</td><td class="shop">OAK 小倉店</td><td>業務委託（面貸し）</td><td class="stars"></td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000361523/" target="_blank" rel="noopener">HPB</a></td><td>顧客をお持ちの方のみ</td></tr>
+      <tr data-k="g"><td><span class="chip oak">OAK</span></td><td>九州</td><td class="shop">OAK hair miel 博多店</td><td>業務委託（面貸し）</td><td class="stars"></td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000299616/" target="_blank" rel="noopener">HPB</a></td><td>顧客をお持ちの方のみ</td></tr>
+      <tr data-k="s p"><td><span class="chip matsuge">まつげ</span></td><td>沖縄</td><td class="shop">Natural ViVi 那覇店</td><td>正社員・アルバイト</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/kr/slnH000559498/" target="_blank" rel="noopener">HPB</a></td><td></td></tr>
+      <tr data-k="s p"><td><span class="chip matsuge">まつげ</span></td><td>沖縄</td><td class="shop">Natural ViVi おもろまち店</td><td>正社員・アルバイト</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/kr/slnH000660962/" target="_blank" rel="noopener">HPB</a></td><td>カラー併設</td></tr>
+      <tr data-k="s p"><td><span class="chip matsuge">まつげ</span></td><td>九州</td><td class="shop">Belle 博多店<br><small style="font-weight:400;color:var(--sub)">旧: Arc 博多店</small></td><td>正社員・アルバイト</td><td class="stars">★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/kr/slnH000485720/" target="_blank" rel="noopener">HPB</a></td><td></td></tr>
+      <tr data-k="p"><td><span class="chip matsuge">まつげ</span></td><td>九州</td><td class="shop">OAK 久留米店</td><td>パート（週3〜4）</td><td class="stars"></td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/kr/slnH000687285/" target="_blank" rel="noopener">HPB</a></td><td>美容室併設</td></tr>
+      <tr data-k="s p"><td><span class="chip color">カラー</span></td><td>東京</td><td class="shop">SPEEDY 恵比寿店</td><td>パート（正社員希望はヘルプあり）</td><td class="stars">★★</td><td class="num">2</td><td><a href="https://beauty.hotpepper.jp/slnH000177566/" target="_blank" rel="noopener">HPB</a></td><td>遅番・土日勤務できる方歓迎</td></tr>
+      <tr data-k="s"><td><span class="chip color">カラー</span></td><td>東京</td><td class="shop">SPEEDY 祐天寺店</td><td>正社員</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000229060/" target="_blank" rel="noopener">HPB</a></td><td>週1勤務も検討可能</td></tr>
+      <tr data-k="s"><td><span class="chip color">カラー</span></td><td>東京</td><td class="shop">SPEEDY 学芸大学店</td><td>正社員</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000279104/" target="_blank" rel="noopener">HPB</a></td><td>週1勤務も検討可能</td></tr>
+      <tr data-k="s p"><td><span class="chip color">カラー</span></td><td>東京</td><td class="shop">SPEEDY 自由が丘店</td><td>パート・正社員</td><td class="stars">★★</td><td class="num">2</td><td><a href="https://beauty.hotpepper.jp/slnH000269581/" target="_blank" rel="noopener">HPB</a></td><td>週1勤務も検討可能</td></tr>
+      <tr data-k="s"><td><span class="chip color">カラー</span></td><td>東京</td><td class="shop">カラーズラボ 仙川店</td><td>正社員</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000386363/" target="_blank" rel="noopener">HPB</a></td><td>塗布・選定未経験も歓迎</td></tr>
+      <tr data-k="p"><td><span class="chip color">カラー</span></td><td>東京</td><td class="shop">Colors Labo 五反田店</td><td>パート</td><td class="stars">★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000596501/" target="_blank" rel="noopener">HPB</a></td><td>まつげパーマ併設</td></tr>
+      <tr data-k="p"><td><span class="chip color">カラー</span></td><td>沖縄</td><td class="shop">SPEEDY 那覇新都心店</td><td>パート</td><td class="stars"></td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000251838/" target="_blank" rel="noopener">HPB</a></td><td>週2日・15時〜21時</td></tr>
+      <tr data-k="s p"><td><span class="chip color">カラー</span></td><td>九州</td><td class="shop">OAKhair 小倉店</td><td>パート・正社員</td><td class="stars">★★★</td><td class="num">1</td><td><a href="https://beauty.hotpepper.jp/slnH000361523/" target="_blank" rel="noopener">HPB</a></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:12px">※ 絞り込みボタンは<b>複数選択できます</b>（もう一度押すと解除・「すべて」でリセット）。エリア担当が複数の方は担当エリアをまとめて選択してください。<br>※ 列の見出しをクリックすると並び替えできます（もう一度クリックで昇順⇄降順）。<br>※ 上記以外のセレスト各店も、指名のお客様を50名以上お連れいただける方は全店舗でご紹介可能です（前店と同じ価格でのメニュー導入可・指名のお客様優先の施術可）。<br>※ カラー専門店は、土日祝・遅番に出勤できる方なら週1〜2日でも歓迎です（早番はブランクのない方であれば週1〜2日でも可）。</p>
+</section>
+
+<section id="youken">
+  <div class="sec-head"><h2>募集要項</h2><span class="en">JOB DETAILS — 業態 × エリア × 雇用形態</span></div>
+
+  <div class="brand-block b-celeste">
+    <h3><span class="chip celeste">セレスト</span>美容室 CELESTE <small>全国（東京・埼玉・神奈川・京都・大阪・兵庫・名古屋・九州）</small></h3>
+    <details open>
+      <summary>業務委託</summary>
+      <div class="d-body">
+        <dl class="kv">
+          <dt>歩合率</dt><dd>指名 63.8%／フリー 51.7%（税抜売上に対する歩合率・材料原価自己負担の場合。会社負担の場合は −11%）</dd>
+          <dt>保証</dt><dd>入社3ヶ月間 指名81%保障／6ヶ月間 フリー55%保障（3〜6ヶ月目の指名は60%）。入社半年間の給与保証（時給1,400円相当）・入客保証（毎月100名相当）あり。早上がりで保証が減ることはありません</dd>
+          <dt>インボイス</dt><dd>会社負担（自己負担を選択する場合は各種手当が2倍）</dd>
+          <dt>勤務</dt><dd>自由出勤・シフト希望制（各店舗の営業時間内・遅番早番の縛りなし）。土日休みもいつでも取得可能</dd>
+        </dl>
+        <h4>手当・インセンティブ</h4>
+        <ul>
+          <li>賞与・アワード表彰：総額1,000万円を表彰者で配分（昨年実績）／紹介インセンティブ 40万円（1人紹介）</li>
+          <li>店販手当 10〜20%／役職手当 平均8万円／口コミ手当 250〜500円/件</li>
+          <li>美髪ランク手当 2,500円〜／再来率手当 最大5万円／行動指針 最大5万円</li>
+          <li>引っ越し手当 5万円／家賃補助（会社指定エリアで家賃半額保障）</li>
+          <li>独立支援（無借金独立・社長直下の独立支援会）</li>
+        </ul>
+        <p class="fine">条件：カラー・カット・縮毛矯正メニューに入客可能な方（ブランク相談可能）</p>
+      </div>
+    </details>
+    <details>
+      <summary>正社員</summary>
+      <div class="d-body">
+        <ul>
+          <li>バリバリ稼ぎたい【週休2日】月給 30.8万円〜</li>
+          <li>プライベート両立【完全週休2日・土日どちらか休み確約】月給 25.2万円〜</li>
+          <li>時短社員・育児両立【週休2日・1日6時間】月給 22万円〜</li>
+          <li>前職指名売上80万円以上【週休2日】月給 32万円〜</li>
+        </ul>
+        <p>月給＋売上歩合＋各種インセンティブ＋交通費（昇給あり）。歩合例：売上110万円→＋117,000円／売上130万円→＋197,000円</p>
+        <p><b>経験歩合給あり</b>：指名売上に応じて月給に加算（例：指名売上30万円→＋3万円、50万円→＋5万円。売上実績に応じてご相談）</p>
+        <p class="fine">給与は労働時間選択制（月140〜220h）に対応：月給19.6万円（140h）〜30.8万円（220h）＋歩合。試用期間1〜2ヶ月（時給1,230円・アルバイト雇用）。年末年始休暇（12/31〜1/3）・有給休暇あり。週休3日制なども相談可能（給与変動あり）・土日休みは月1〜2日まで取得可能</p>
+      </div>
+    </details>
+    <details>
+      <summary>アルバイト</summary>
+      <div class="d-body">
+        <p>基本時給 1,400円〜（全国統一）＋売上歩合＋各種インセンティブ＋交通費（経歴・技術により時給UPあり）。歩合例：売上70万円→＋41,000円／売上90万円→＋121,000円</p>
+        <p class="fine">社会保険は法定通り。自由出勤・シフト希望制。研修・試用期間中は時給1,230円（習得スピードにより期間は個人差あり）</p>
+      </div>
+    </details>
+    <details>
+      <summary>正社員給与テーブル（労働時間別・東京 2025.11改訂）</summary>
+      <div class="d-body">
+        <p class="fine">時給1,400円ベースの労働時間選択制（変形労働時間制・固定残業代込み）。歩合給は300円/時</p>
+        <div class="table-scroll"><table>
+          <thead><tr><th>区分</th><th>労働時間の目安</th><th>基本給</th><th>歩合給</th><th>計</th><th>固定残業</th></tr></thead>
+          <tbody>
+            <tr><td>時短社員</td><td>150時間前後</td><td class="num">196,000円</td><td class="num">42,000円</td><td class="num"><b>238,000円</b></td><td class="num">10h</td></tr>
+            <tr><td>時短社員</td><td>170時間前後</td><td class="num">224,000円</td><td class="num">48,000円</td><td class="num"><b>272,000円</b></td><td class="num">15h</td></tr>
+            <tr><td>社員</td><td>190時間前後</td><td class="num">252,000円</td><td class="num">54,000円</td><td class="num"><b>306,000円</b></td><td class="num">20h</td></tr>
+            <tr><td>社員</td><td>205時間前後</td><td class="num">280,000円</td><td class="num">60,000円</td><td class="num"><b>340,000円</b></td><td class="num">32h</td></tr>
+            <tr><td>社員</td><td>220時間〜</td><td class="num">308,000円</td><td class="num">66,000円</td><td class="num"><b>374,000円</b></td><td class="num">46h</td></tr>
+          </tbody>
+        </table></div>
+        <p><b>売上インセンティブ</b>：売上（税抜）の40%が「基本給＋歩合給＋交通費等」を上回った額を支給。例：売上90万円→2.7万〜13.9万円／110万円→10.7万〜21.9万円／130万円→18.7万〜29.9万円（労働時間パターンによる）</p>
+        <ul>
+          <li>口コミ手当 500円/件／美髪マイスターランク報酬 5,000〜10,000円／物販手当 10〜20%</li>
+          <li>役職給 20,000〜120,000円（店長ランクによる）／人材紹介 指名売上の2%（在籍期間）または40万円</li>
+        </ul>
+        <p class="fine">研修期間は時給1,230円。パートは時給1,400円〜（成果に応じて昇給あり）</p>
+      </div>
+    </details>
+    <details>
+      <summary>給与例（実在スタッフ・月給）</summary>
+      <div class="d-body">
+        <ul>
+          <li><b>月給 546,838円</b>｜男性スタイリスト Mさん（4年目）: 週休1〜2日（平日休み）・1日10〜11時間勤務</li>
+          <li><b>月給 347,406円</b>｜女性・主婦・時短 Oさん(歴10年以上）: 週休2〜3日（平日・日・祝休み）・1日6時間勤務</li>
+        </ul>
+        <p><b>年収事例</b>：アイリスト 400万円／カラーリスト 550万円／スタイリスト 850万円／マネジメント込み 480万円・650万円・1,000万円</p>
+        <p class="fine">働き方（労働時間・休日数）によって給与は変動します。詳細は面接時にご相談いただけます</p>
+      </div>
+    </details>
+    <details>
+      <summary>顧客をお持ちの方（全店舗共通）</summary>
+      <div class="d-body">
+        <p>お客様をお持ちの方は<b>どの店舗でもご紹介歓迎</b>です。前の店舗と同じ価格でのメニュー導入OK・フリーに無理に入らず指名のお客様を最優先で施術可能です（本人が望む場合はフリー入客も可）。</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="brand-block b-nicotto">
+    <h3><span class="chip nicotto">nicotto</span>美容室 nicotto（ニコット） <small>三軒茶屋・門前仲町・八王子（2026年下旬オープン予定）＋西日暮里（買収予定）</small></h3>
+    <details open>
+      <summary>ブランドコンセプト・求める方</summary>
+      <div class="d-body">
+        <p>50歳以上の女性のお客様を中心とした美容室。<b>年齢不問・ブランク不問</b>で、人生経験豊かな美容師さんを求めています。カットはお一人60分のゆとりある予約設計・掛け持ちなし・19時閉店。メニューは髪質改善美容室CELESTEで培った技術がベースです。</p>
+        <p class="fine">ブランクのある方は新卒スタイリストと同じ教育プログラムで、シャンプー・カラー塗布からの再スタートOK（面談時の技術チェックなし）</p>
+      </div>
+    </details>
+    <details>
+      <summary>正社員（労働時間別テーブル）</summary>
+      <div class="d-body">
+        <p class="fine">時給1,400円ベース。営業時間9:00〜19:00・<b>土曜または日曜どちらかの休み確約</b>・時短勤務OK・産休育休あり</p>
+        <div class="table-scroll"><table>
+          <thead><tr><th>働き方</th><th>労働時間の目安</th><th>基本給</th></tr></thead>
+          <tbody>
+            <tr><td>時短社員（平日15時まで・土or日休み）</td><td>約125h</td><td class="num"><b>175,000円</b></td></tr>
+            <tr><td>時短社員（平日15時まで・土日出勤）</td><td>約140h</td><td class="num"><b>196,000円</b></td></tr>
+            <tr><td>社員（完全週休2日・土or日休み）</td><td>約190h</td><td class="num"><b>266,000円</b></td></tr>
+          </tbody>
+        </table></div>
+        <p><b>経験歩合給</b>（指名売上に応じて月給に加算）：指名売上30万円→2万〜3万円／50万円→3.3万〜5万円／70万円→4.6万〜7万円／90万円→5.9万〜9万円（労働時間パターンによる）</p>
+        <p class="fine">売上インセンティブ：売上（税抜）の40%が基本給＋歩合給等を上回った額を支給（例：売上90万円→6.9万〜16万円）。口コミ手当500円/件・美髪マイスター報酬・物販手当10〜20%あり</p>
+      </div>
+    </details>
+    <details>
+      <summary>パート・アルバイト</summary>
+      <div class="d-body">
+        <p>時給 1,400円〜（復帰・研修期間は時給1,230円）。完全自由シフト・週1日・扶養内からOK。土日休みも相談可能</p>
+      </div>
+    </details>
+    <details>
+      <summary>業務委託</summary>
+      <div class="d-body">
+        <p>完全歩合: 指名63%／フリー51%（税抜売上に対する歩合率）。勤務時間9:00〜19:00</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="brand-block b-color">
+    <h3><span class="chip color">カラー</span>ヘアカラー専門店 SPEEDY / Colors Labo <small>東京・沖縄・九州</small></h3>
+    <details open>
+      <summary>正社員（例：カラーズラボ仙川店）</summary>
+      <div class="d-body">
+        <ul>
+          <li>バリバリ稼ぎたい【月8日休み】月給 33万円〜</li>
+          <li>プライベート両立【完全週休2日・土日どちらか休み確約】月給 28万円〜</li>
+          <li>塗布・選定未経験者歓迎【週休2日】月給 27万円〜</li>
+          <li>時短社員・育児や家庭との両立【平日16時まで勤務】月給 25.5万円〜</li>
+        </ul>
+        <p class="fine">試用期間1〜2ヶ月（時給1,230円・アルバイト雇用）。土日休み取得可能・勤務時間や休日数の相談はいつでも可能。九州（OAKhair博多店）は月給 332,800円（インセンティブ含む）＋交通費の例あり</p>
+      </div>
+    </details>
+    <details>
+      <summary>パート・アルバイト</summary>
+      <div class="d-body">
+        <p>時給の目安（地域による）：東京 1,400円〜（土日休み希望の場合は1,340円〜）／沖縄 1,030円〜／九州 1,060円〜。Colors Labo五反田店は社内試験合格で時給 1,500円〜。遅番手当100〜200円/時・再来率手当0〜30円/時・役職手当50〜300円/時あり</p>
+        <p class="fine">社会保険は法定通り。土日祝・遅番に出勤できる方は週1〜2日でも歓迎</p>
+      </div>
+    </details>
+    <details>
+      <summary>正社員給与テーブル（所定労働時間別）</summary>
+      <div class="d-body">
+        <p class="fine">※ 3ヶ月に1回、労働時間パターンを変更できます</p>
+        <h4>東京エリア（2026年版・基本給1,240円/時＋基礎歩合給160円/時）</h4>
+        <div class="table-scroll"><table>
+          <thead><tr><th>働き方</th><th>労働時間の目安</th><th>基本給</th><th>基礎歩合給</th><th>計</th></tr></thead>
+          <tbody>
+            <tr><td>完全週休2日・土日どちらか休み・平日16時まで</td><td>約150h</td><td class="num">186,000円</td><td class="num">24,000円</td><td class="num"><b>210,000円</b></td></tr>
+            <tr><td>完全週休2日・平日16時まで</td><td>約170h</td><td class="num">210,800円</td><td class="num">27,200円</td><td class="num"><b>238,000円</b></td></tr>
+            <tr><td>完全週休2日</td><td>約180h</td><td class="num">223,200円</td><td class="num">28,800円</td><td class="num"><b>252,000円</b></td></tr>
+            <tr><td>完全週休2日</td><td>約200h</td><td class="num">248,000円</td><td class="num">32,000円</td><td class="num"><b>280,000円</b></td></tr>
+            <tr><td>完全週休2日・土日どちらか休み</td><td>約210h</td><td class="num">260,400円</td><td class="num">33,600円</td><td class="num"><b>294,000円</b></td></tr>
+            <tr><td>月7日休み</td><td>約220h</td><td class="num">272,800円</td><td class="num">35,200円</td><td class="num"><b>308,000円</b></td></tr>
+          </tbody>
+        </table></div>
+        <p>上記に加算される手当：土日祝手当（休みなし100円/時・1日休み50円/時）／遅番手当 200円/時（20時以降）／再来率手当 10〜30円/時（45%超〜55%超）ほか</p>
+        <p class="fine">変形労働時間制（固定残業代込み）・試用期間は時給1,240円。五反田店は社内試験合格で特別手当 74,200〜116,600円が加算</p>
+        <h4>名古屋エリア（給与詳細タブ準拠）</h4>
+        <div class="table-scroll"><table>
+          <thead><tr><th>所定労働時間</th><th>150h前後</th><th>170h前後</th><th>190h前後</th><th>210h前後</th></tr></thead>
+          <tbody>
+            <tr><td>基本給</td><td>144,200円</td><td>164,800円</td><td>185,400円</td><td>206,000円</td></tr>
+            <tr><td>固定残業時間</td><td>8h</td><td>11h</td><td>26h</td><td>45h</td></tr>
+          </tbody>
+        </table></div>
+        <h4>評価連動の手当（月々の給与に反映）</h4>
+        <ul>
+          <li>店長手当 23,800〜88,000円／行動指針手当 1,400〜17,600円（半年毎評価）</li>
+          <li>再来率手当 1,400〜11,000円／人時接客手当 1,400〜6,600円</li>
+          <li>土日手当 7,000〜22,000円／シフト貢献手当 4,200〜15,400円</li>
+          <li>勤続ボーナス（黒字転換後: 3年3万円・5年5万円・7年7万円）</li>
+        </ul>
+        <p>平均インセンティブ実績: <b>月 96,800円</b>。給与例: 基本給264,000＋土日手当22,000＋シフト貢献6,600＋相互評価5,500＋再来率4,400＋人時接客4,400円</p>
+      </div>
+    </details>
+    <details>
+      <summary>インセンティブ・福利厚生</summary>
+      <div class="d-body">
+        <ul>
+          <li>役職手当（月1万〜10万円）／生産性貢献手当（月3万〜6万円）／顧客満足度手当</li>
+          <li>ボーナスあり（総額500万円を全スタッフで評価に応じて配分）</li>
+          <li>紹介インセンティブ 20万〜40万円／店販手当 10〜20%</li>
+          <li>引っ越し手当 5万円／家賃補助（会社指定エリアで家賃半額保障）</li>
+          <li>社会保険完備・産休育休介護休暇・有給・定期健診・社割・海外研修（ロンドン・パリなど）ほか</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="brand-block b-matsuge">
+    <h3><span class="chip matsuge">まつげ</span>アイラッシュ Natural ViVi / Arc / Eye Doll / Belle / Noel <small>東京・神奈川・名古屋・九州・沖縄</small></h3>
+    <details open>
+      <summary>正社員</summary>
+      <div class="d-body">
+        <p>月給 255,000円〜（インセンティブ含む）＋交通費。Noel武蔵小杉店は月給 275,000円〜（インセンティブ含む）＋交通費</p>
+        <p class="fine">まつげパーマ（ビューラー式）中心。希望があればどのメニューにも挑戦可能（九州一部店舗・沖縄・東京はメニュー拡張あり）。出勤はご相談ください</p>
+      </div>
+    </details>
+    <details>
+      <summary>パート・アルバイト</summary>
+      <div class="d-body">
+        <p>時給の目安（地域による）：東京・神奈川 1,230円〜／名古屋 1,140円〜／福岡 1,060円〜／沖縄 1,030円〜＋インセンティブ（再来率・相互評価などで時給加算）</p>
+        <p class="fine">社会保険は法定通り</p>
+      </div>
+    </details>
+    <details>
+      <summary>正社員給与テーブル（所定労働時間別）</summary>
+      <div class="d-body">
+        <p class="fine">※ 3ヶ月に1回、労働時間パターンを変更できます。休みは平均月8日（労働時間により増減の相談可能）</p>
+        <h4>東京エリア</h4>
+        <div class="table-scroll"><table>
+          <thead><tr><th>所定労働時間</th><th>170h</th><th>190h</th><th>210h</th></tr></thead>
+          <tbody>
+            <tr><td>基本給</td><td>220,000円</td><td>245,000円</td><td>270,000円</td></tr>
+            <tr><td>固定残業時間</td><td>15h</td><td>17h</td><td>38h</td></tr>
+          </tbody>
+        </table></div>
+        <h4>名古屋・九州エリア</h4>
+        <div class="table-scroll"><table>
+          <thead><tr><th>所定労働時間</th><th>170h</th><th>190h</th><th>210h</th></tr></thead>
+          <tbody>
+            <tr><td>基本給</td><td>200,000円</td><td>225,000円</td><td>250,000円</td></tr>
+            <tr><td>固定残業時間</td><td>15h</td><td>17h</td><td>38h</td></tr>
+          </tbody>
+        </table></div>
+        <h4>手当</h4>
+        <ul>
+          <li>カラー手当 25,000円／店長手当 5,000〜80,000円（月々の評価）</li>
+          <li>行動指針手当 0〜30,000円（半年毎評価）／再来率手当 0〜30,000円／生産性手当 0〜10,000円</li>
+        </ul>
+        <p class="fine">※ 独り立ちまでの期間中は −20,000円。研修期間（約1ヶ月）は時給制（地域により異なる・面接時にご確認ください）</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="brand-block b-oak">
+    <h3><span class="chip oak">OAK</span>美容室 OAK hair <small>九州（小倉・福間・博多・九大学研都市・久留米）</small></h3>
+    <details open>
+      <summary>業務委託</summary>
+      <div class="d-body">
+        <dl class="kv">
+          <dt>歩合率</dt><dd>指名 61%（入社3ヶ月は81%保障）／フリー 55%（税抜売上に対する歩合率・材料原価自己負担の場合。会社負担の場合は −11%）</dd>
+          <dt>保証</dt><dd>セレストと同様（給与保証・入客保証あり）</dd>
+          <dt>面貸し</dt><dd>小倉店・博多店は顧客をお持ちの方のみ面貸しでのご紹介が可能</dd>
+        </dl>
+        <p class="fine">手当・インセンティブはセレスト業務委託と共通です</p>
+      </div>
+    </details>
+  </div>
+
+  <p class="note">※ 各業態の「正社員給与テーブル」も上記に掲載しています。原文・最新版は共有スプレッドシートの「各業態の募集,概要」「給与詳細」タブをご覧ください。個別の条件は面接時にご相談いただけます。</p>
+</section>
+
+<section id="salary-growth">
+  <div class="sec-head"><h2>給与の推移</h2><span class="en">SALARY GROWTH</span></div>
+  <p style="max-width:680px;margin-bottom:18px">生産性の改善に取り組み続けており、<b>全社の平均給与は毎年上昇しています</b>。候補者様への訴求材料としてご活用ください。</p>
+  <div class="hero-stats" style="margin:0 0 22px">
+    <div class="stat gold"><b>528</b>万円<span>2025年 平均年収（業務委託・週休2日勤務の場合）</span></div>
+    <div class="stat"><b>+21%</b><span>平均年収の伸び（2023→2025年）</span></div>
+    <div class="stat"><b>970</b>万円<span>店長クラスの年収実例（2025年）</span></div>
+  </div>
+  <h3 style="font-size:16px;margin-bottom:10px">業務委託（歩合50％）の推移</h3>
+  <div class="table-scroll" style="margin-bottom:24px">
+  <table>
+    <thead><tr><th></th><th>2023年</th><th>2024年</th><th>2025年</th><th>2026年</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr><td><b>生産性</b></td><td class="num">3,300円</td><td class="num">3,600円<small>（前年比109%）</small></td><td class="num">4,000円<small>（前年比111%）</small></td><td class="num">集計中</td><td></td></tr>
+      <tr><td><b>平均時給</b></td><td class="num">1,650円</td><td class="num">1,800円</td><td class="num"><b>2,000円</b></td><td class="num">集計中</td><td>生産性の50％</td></tr>
+      <tr><td><b>平均年収</b></td><td class="num">435.6万円</td><td class="num">475.2万円</td><td class="num"><b>528万円</b></td><td class="num">集計中</td><td>週休2日で働いた場合</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 style="font-size:16px;margin-bottom:10px">正社員・パート・アルバイト（歩合原資40％）の推移</h3>
+  <div class="table-scroll" style="margin-bottom:24px">
+  <table>
+    <thead><tr><th></th><th>2023年</th><th>2024年</th><th>2025年</th><th>2026年</th><th>備考</th></tr></thead>
+    <tbody>
+      <tr><td><b>生産性</b></td><td class="num">3,300円</td><td class="num">3,600円<small>（前年比109%）</small></td><td class="num">4,000円<small>（前年比111%）</small></td><td class="num">集計中</td><td></td></tr>
+      <tr><td><b>平均時給</b></td><td class="num">1,320円</td><td class="num">1,440円</td><td class="num"><b>1,600円</b></td><td class="num">集計中</td><td>生産性の40％</td></tr>
+      <tr><td><b>平均年収</b></td><td class="num">348.5万円</td><td class="num">380.2万円</td><td class="num"><b>422.4万円</b></td><td class="num">集計中</td><td>週休2日で働いた場合・歩合手当別</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3 style="font-size:16px;margin-bottom:10px">スタッフ年収の推移（実例）</h3>
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th>役職</th><th>2023年</th><th>2024年</th><th>2025年</th><th>アワード賞金</th></tr></thead>
+    <tbody>
+      <tr><td><b>店長</b></td><td>年収 790万円<br><small>時給2,800円・単価8,800円</small></td><td>年収 830万円<br><small>時給3,700円・単価11,000円</small></td><td><b>年収 970万円</b><br><small>時給4,600円・単価11,800円</small></td><td class="num">＋約38万円</td></tr>
+      <tr><td><b>プレーヤー</b></td><td>年収 570万円<br><small>時給2,270円・単価8,800円</small></td><td>年収 720万円<br><small>時給2,660円・単価11,000円</small></td><td><b>年収 790万円</b><br><small>時給3,140円・単価11,800円</small></td><td class="num">＋約21万円</td></tr>
+      <tr><td><b>プレーヤー</b></td><td>年収 470万円<br><small>時給1,660円・単価7,000円</small></td><td>年収 510万円<br><small>時給1,850円・単価7,650円</small></td><td><b>年収 580万円</b><br><small>時給2,220円・単価9,100円</small></td><td class="num">＋約4万円</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:12px">※ 単価は客単価。年収実例は当社在籍スタッフの実績です。詳細は共有スプレッドシートの「給与の推移」タブをご覧ください。</p>
+</section>
+
+<section id="referrals">
+  <div class="sec-head"><h2>ご紹介実績・その後</h2><span class="en">REFERRALS</span></div>
+  <div class="ref-stats">
+    <div class="stat"><b>38</b>名<span>累計ご紹介（2024/4〜2026/8）</span></div>
+    <div class="stat gold"><b>9</b>名<span>成約（採用・入社決定）</span></div>
+    <div class="stat"><b>16</b>ヶ月<span>最長在籍（2025/4入社・継続中）</span></div>
+  </div>
+  <div class="table-scroll">
+  <table id="ref-table" class="sortable">
+    <thead><tr><th>ご成約者</th><th>ご担当</th><th>業態</th><th>店舗</th><th>入社日</th><th>その後</th></tr></thead>
+    <tbody>
+      <tr><td>小原様</td><td>−</td><td><span class="chip celeste">セレスト</span></td><td>竹ノ塚</td><td class="num">2025年1月</td><td>退職（2025年6月・約5ヶ月在籍・パート）</td></tr>
+      <tr><td>江黒様</td><td>飯田様</td><td><span class="chip celeste">セレスト</span></td><td>町田</td><td class="num">2025年4月</td><td>約17ヶ月・在籍中（アルバイト・売上約60万円）</td></tr>
+      <tr><td>桑江様</td><td>保志場様</td><td><span class="chip color">カラー</span></td><td>那覇</td><td class="num">2025年5月</td><td>約15ヶ月・在籍中（アルバイト・ご家族都合の転居予定に伴い小倉店勤務を提案中）</td></tr>
+      <tr><td>川口様</td><td>二階堂様</td><td><span class="chip celeste">セレスト</span></td><td>江古田</td><td class="num">2025年6月</td><td>約14ヶ月・在籍中（8月から業務委託へ・月120時間勤務／約60万円売上）</td></tr>
+      <tr><td>谷崎様</td><td>西川様</td><td><span class="chip celeste">セレスト</span></td><td>町田</td><td class="num">2026年4月</td><td>約5ヶ月・在籍中（正社員・本社採用業務兼務、売上100万円突破で上位10％）</td></tr>
+      <tr><td>上地様</td><td>ヤヤ様</td><td><span class="chip matsuge">まつげ</span></td><td>沖縄</td><td class="num">2025年11月</td><td>退職（2026年4月・約5ヶ月在籍・エクステ志向のため）</td></tr>
+      <tr><td>鈴木様</td><td>小口様</td><td><span class="chip celeste">セレスト</span></td><td>川口</td><td class="num">2026年2月</td><td>退職（約6ヶ月在籍・勤務姿勢のミスマッチ）</td></tr>
+      <tr><td>眞木様</td><td>二階堂様</td><td><span class="chip celeste">セレスト</span></td><td>大泉学園</td><td class="num">2026年3月</td><td>退職（2026年7月・約5ヶ月在籍・ほぼ出勤されず）</td></tr>
+      <tr><td>富永様</td><td>井上様</td><td><span class="chip matsuge">まつげ</span></td><td>栄</td><td class="num">2026年9月 予定</td><td>内定（正社員・9月より東京研修）</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="privacy">個人情報保護のため、本ページではご成約者を姓のみで記載しています。選考中・辞退を含む全38名のご紹介一覧は、パスワード保護ページでご覧いただけます（パスワードは担当者から別途お伝えしています）。最長在籍は江黒様（2025年4月入社・継続中）です。</p>
+  <p style="margin-top:14px"><a class="link-card" style="display:inline-block" href="referrals.html">
+    <b>ご紹介一覧（全履歴）を開く</b>
+    <span>パスワード保護ページ｜ご紹介者様ごとの全38名・ステータス・ご紹介料</span>
+    <span class="arrow">パスワードを入力して閲覧 →</span>
+  </a></p>
+</section>
+
+<section id="photos">
+  <div class="sec-head"><h2>店舗写真・シャンプー台</h2><span class="en">STORES &amp; SHAMPOO UNITS</span></div>
+  <div class="gallery">
+    <figure class="ph"><img src="assets/photos/celeste-tokiwadai-1.jpg" alt="CELESTEときわ台店のスタイリングフロア" loading="lazy"><figcaption><b>CELESTE ときわ台店</b>スタイリングフロア</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/celeste-tokiwadai-2.jpg" alt="CELESTEときわ台店の待合・受付" loading="lazy"><figcaption><b>CELESTE ときわ台店</b>待合・受付</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/celeste-tokiwadai-shampoo.jpg" alt="CELESTEときわ台店のシャンプー台" loading="lazy"><figcaption><b>CELESTE ときわ台店</b>シャンプー台（リクライニング式3台）</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/celeste-asagaya.jpg" alt="CELESTE阿佐ヶ谷店の店内" loading="lazy"><figcaption><b>CELESTE 阿佐ヶ谷店</b>店内</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/colorslabo-hisaya.jpg" alt="Colors Labo久屋大通店の施術フロア" loading="lazy"><figcaption><b>Colors Labo 久屋大通店</b>施術フロア</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/colorslabo-gotanda.jpg" alt="Colors Labo五反田店のスタイリングエリア" loading="lazy"><figcaption><b>Colors Labo 五反田店</b>スタイリングエリア</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/colorslabo-sengawa.jpg" alt="カラーズラボ仙川店のスタイリングブース" loading="lazy"><figcaption><b>カラーズラボ 仙川店</b>スタイリングブース</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/speedy-gakudai-shampoo.jpg" alt="SPEEDY学芸大学店のシャンプー台" loading="lazy"><figcaption><b>SPEEDY 学芸大学店</b>シャンプー台</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/speedy-yutenji.jpg" alt="SPEEDY祐天寺店のシャンプー台" loading="lazy"><figcaption><b>SPEEDY 祐天寺店</b>シャンプー台</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/speedy-naha.jpg" alt="SPEEDY那覇新都心店の店内" loading="lazy"><figcaption><b>SPEEDY 那覇新都心店</b>店内</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/oak-interior-1.jpg" alt="OAK hairの店内" loading="lazy"><figcaption><b>OAK hair</b>店内（スタイリングエリア）</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/oak-interior-2.jpg" alt="OAK hairの待合スペース" loading="lazy"><figcaption><b>OAK hair</b>待合スペース</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/vivi-ebisu.jpg" alt="Natural ViViの施術スペース" loading="lazy"><figcaption><b>Natural ViVi</b>施術スペース</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/vivi-miyashita.jpg" alt="Natural ViViの施術スペース" loading="lazy"><figcaption><b>Natural ViVi</b>施術スペース</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/vivi-sakae.jpg" alt="Natural ViViの施術スペースと受付" loading="lazy"><figcaption><b>Natural ViVi</b>施術スペース・受付</figcaption></figure>
+    <figure class="ph"><img src="assets/photos/eyedoll-shibuya.jpg" alt="Eye Doll渋谷店の施術スペース" loading="lazy"><figcaption><b>Eye Doll 渋谷店</b>施術スペース</figcaption></figure>
+  </div>
+  <p class="note" style="margin-top:12px">※ 写真は各ブランドの内装イメージです。掲載のない店舗（葛西・住吉・門前仲町など）の写真は入手でき次第追加します。その他の店舗写真は共有スプレッドシートの「店舗雰囲気シャンプー台」タブにも掲載しています。ご希望の店舗があればお声がけください。</p>
+</section>
+
+<section id="interview">
+  <div class="sec-head"><h2>インタビュー・会社の想い</h2><span class="en">INTERVIEWS</span></div>
+  <div class="link-cards">
+    <a class="link-card" href="https://beautygrow.co.jp/interview/" target="_blank" rel="noopener">
+      <b>スタッフインタビュー</b>
+      <span>アイラッシュ統括マネージャー、CELESTE川口店・石神井公園店・江古田店、SPEEDY恵比寿店のスタッフ5名のインタビューを掲載</span>
+      <span class="arrow">beautygrow.co.jp/interview →</span>
+    </a>
+    <a class="link-card" href="https://beautygrow.co.jp/aboutus/" target="_blank" rel="noopener">
+      <b>会社の想い（3つの大切なこと）</b>
+      <span>「自由とチームワークの両立」「生涯現役美容師の実現」「お客様への誠実性」— 企業理念と会社概要</span>
+      <span class="arrow">beautygrow.co.jp/aboutus →</span>
+    </a>
+    <a class="link-card" href="https://beautygrow.co.jp/recruit/" target="_blank" rel="noopener">
+      <b>採用情報・代表メッセージ</b>
+      <span>代表・齋藤光司のメッセージ「美容業界の働き方改革を実現します」と各業態の募集要項</span>
+      <span class="arrow">beautygrow.co.jp/recruit →</span>
+    </a>
+  </div>
+</section>
+
+<section id="company">
+  <div class="sec-head"><h2>会社概要</h2><span class="en">COMPANY</span></div>
+  <div class="co-grid">
+    <div>
+      <table class="co-table">
+        <tr><th>会社名</th><td>株式会社Beauty Grow</td></tr>
+        <tr><th>代表</th><td>代表取締役 齋藤 光司</td></tr>
+        <tr><th>本社</th><td>東京都港区南青山1-15-9 第45興和ビル 8F</td></tr>
+        <tr><th>設立</th><td>2024年8月（持株会社として設立）</td></tr>
+        <tr><th>店舗数</th><td>直営70店舗（美容室 30店舗／ヘアカラー専門店 15店舗／まつげカール専門店 25店舗）</td></tr>
+        <tr><th>ブランド</th><td>CELESTE（美容室）／OAK hair（美容室）／nicotto（美容室・2026年下旬〜）／SPEEDY・Colors Labo（ヘアカラー専門）／Natural ViVi・Arc・Eye Doll・Belle・Noel（アイラッシュ）</td></tr>
+        <tr><th>キャリア</th><td>マネジメント／スペシャリスト／本社スタッフ／新規事業／独立／新卒教育 の6コースから選択可能</td></tr>
+        <tr><th>公式サイト</th><td><a href="https://beautygrow.co.jp" target="_blank" rel="noopener">beautygrow.co.jp</a></td></tr>
+      </table>
+      <p class="philosophy">美容を通じて「笑顔」を創る<br><small style="font-family:'Noto Sans JP';font-size:12px;color:var(--sub)">生涯現役美容師を当たり前に／お客様に最適解を提供します</small></p>
+    </div>
+    <div>
+      <ul class="timeline">
+        <li><b>2008</b><span>池袋にアイラッシュサロンを開業</span></li>
+        <li><b>2012</b><span>ヘアカラー専門店運営会社 株式会社SPEEDY 設立</span></li>
+        <li><b>2020</b><span>齋藤がSPEEDY社代表に就任。まつげパーマ事業を統合</span></li>
+        <li><b>2024</b><span>美容室・カラー・まつげ合わせて約40店舗に拡大。株式会社Beauty Growを新設し、美容室CELESTE 25店舗をグループ化</span></li>
+        <li><b>2025</b><span>株式会社SPEEDYおよびOAKグループ5店舗を吸収合併</span></li>
+        <li><b>2026</b><span>グループ累計 約70店舗体制に</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <p>本ページはミライズム様との人材紹介取引のための共有資料です。掲載内容の転載・候補者様以外への共有はご遠慮ください。</p>
+    <p style="margin-top:6px">掲載条件は作成時点のものです。最新の条件・個別のご相談は担当（Beauty Grow 採用担当）までお問い合わせください。｜最終更新 2026年8月17日</p>
+  </div>
+</footer>
+
+<script>
+// click a column header to sort (toggles asc/desc)
+document.querySelectorAll('table.sortable').forEach(function(tbl){
+  var ths = tbl.querySelectorAll('thead th');
+  ths.forEach(function(th, idx){
+    th.setAttribute('title', 'クリックで並び替え');
+    th.tabIndex = 0;
+    th.setAttribute('role', 'button');
+    th.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); th.click(); } });
+    th.addEventListener('click', function(){
+      var tbody = tbl.querySelector('tbody');
+      var asc = th.dataset.dir !== 'asc';
+      ths.forEach(function(h){ delete h.dataset.dir; var d = h.querySelector('.dir'); if (d) d.remove(); });
+      th.dataset.dir = asc ? 'asc' : 'desc';
+      ths.forEach(function(h){ h.removeAttribute('aria-sort'); });
+      th.setAttribute('aria-sort', asc ? 'ascending' : 'descending');
+      var mark = document.createElement('span');
+      mark.className = 'dir';
+      mark.textContent = asc ? '▲' : '▼';
+      th.appendChild(mark);
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort(function(a, b){
+        var av = (a.children[idx] ? a.children[idx].textContent : '').trim();
+        var bv = (b.children[idx] ? b.children[idx].textContent : '').trim();
+        // empty values always sink to the bottom regardless of direction
+        if (!av && !bv) return 0;
+        if (!av) return 1;
+        if (!bv) return -1;
+        var an = parseFloat(av.replace(/[^0-9.]/g, ''));
+        var bn = parseFloat(bv.replace(/[^0-9.]/g, ''));
+        var bothNum = !isNaN(an) && !isNaN(bn) && /^[0-9]/.test(av) && /^[0-9]/.test(bv);
+        var r = bothNum ? an - bn : av.localeCompare(bv, 'ja');
+        return asc ? r : -r;
+      });
+      rows.forEach(function(r){ tbody.appendChild(r); });
+    });
+  });
+});
+// combined multi-select filters: employment type (data-f) AND brand (data-b) AND region (data-a)
+// each group: empty selection = "all"; options toggle on/off individually
+var REGION = { '東京': '首都圏', '神奈川': '首都圏', '埼玉': '首都圏', '京都': '関西', '大阪': '関西', '兵庫': '関西', '名古屋': '名古屋', '九州': '九州', '沖縄': '沖縄' };
+var filterState = { f: [], b: [], a: [], t: [] };
+function applyFilters(){
+  document.querySelectorAll('#store-table tbody tr').forEach(function(tr){
+    var forms = (tr.dataset.k || '').split(' ');
+    var okF = filterState.f.length === 0 || filterState.f.some(function(v){ return forms.indexOf(v) !== -1; });
+    var chip = tr.querySelector('.chip');
+    var okB = filterState.b.length === 0 || filterState.b.some(function(v){ return chip && chip.classList.contains(v); });
+    var region = REGION[tr.children[1] ? tr.children[1].textContent.trim() : ''];
+    var okA = filterState.a.length === 0 || filterState.a.indexOf(region) !== -1;
+    var timing = tr.dataset.t || 'now';
+    var okT = filterState.t.length === 0 || filterState.t.indexOf(timing) !== -1;
+    tr.style.display = (okF && okB && okA && okT) ? '' : 'none';
+  });
+}
+document.querySelectorAll('.filters').forEach(function(group){
+  group.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.dataset.f !== undefined ? 'f' : (btn.dataset.b !== undefined ? 'b' : (btn.dataset.t !== undefined ? 't' : 'a'));
+      var val = btn.dataset[key];
+      var sel = filterState[key];
+      if (val === 'all') {
+        sel.length = 0;
+      } else {
+        var i = sel.indexOf(val);
+        i === -1 ? sel.push(val) : sel.splice(i, 1);
+      }
+      group.querySelectorAll('button').forEach(function(b){
+        var v = b.dataset[key];
+        b.classList.toggle('on', v === 'all' ? sel.length === 0 : sel.indexOf(v) !== -1);
+      });
+      applyFilters();
+    });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/*
+!/bg-nicotto/
+!/workcanvas-lp/
+!/miraizm-lp/
+!/.gitignore
+!/README.md
+**/node_modules/
+**/.vercel/
+**/src/out/
