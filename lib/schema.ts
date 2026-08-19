@@ -15,6 +15,8 @@ export interface StoreRow {
   employmentLabel: string;
   employment: EmploymentKey[];
   timing?: Timing; // defaults to "now"
+  /** Master sheet ⑤ column B star: accepts stylists who bring their own clients */
+  clientOk?: boolean;
   stars: string; // "★" | "★★" | "★★★" | ""
   count: string; // rendered as-is; empty string allowed
   hpbUrl?: string;

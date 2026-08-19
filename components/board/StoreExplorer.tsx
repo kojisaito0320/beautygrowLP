@@ -27,7 +27,7 @@ function cellText(row: StoreRow, col: number): string {
   }
 }
 
-type FilterState = { f: string[]; b: string[]; a: string[]; t: string[] };
+type FilterState = { f: string[]; b: string[]; a: string[] };
 
 const FILTER_GROUPS: {
   key: keyof FilterState;
@@ -54,13 +54,6 @@ const FILTER_GROUPS: {
     ],
   },
   {
-    key: "t", label: "採用時期:", aria: "採用時期で絞り込み",
-    options: [
-      { value: "now", label: "即戦力" },
-      { value: "later", label: "入社時期が先" },
-    ],
-  },
-  {
     key: "a", label: "エリア:", aria: "エリアで絞り込み",
     options: [
       { value: "首都圏", label: "首都圏" },
@@ -72,9 +65,23 @@ const FILTER_GROUPS: {
   },
 ];
 
+/** Normal view: has priority stars, or is not a client-only listing */
+function inNormalView(row: StoreRow): boolean {
+  return row.stars.trim() !== "" || !row.clientOk;
+}
+
 export default function StoreExplorer({ stores }: { stores: StoreRow[] }) {
   const [sort, setSort] = useState<SortState | null>(null);
-  const [filters, setFilters] = useState<FilterState>({ f: [], b: [], a: [], t: [] });
+  const [filters, setFilters] = useState<FilterState>({ f: [], b: [], a: [] });
+  const [clientView, setClientView] = useState(false);
+
+  const counts = useMemo(
+    () => ({
+      normal: stores.filter(inNormalView).length,
+      client: stores.filter((r) => r.clientOk).length,
+    }),
+    [stores]
+  );
 
   const order = useMemo(() => {
     const idx = stores.map((_, i) => i);
@@ -91,9 +98,8 @@ export default function StoreExplorer({ stores }: { stores: StoreRow[] }) {
     const okB = filters.b.length === 0 || filters.b.includes(row.brand);
     const region = REGION[row.area];
     const okA = filters.a.length === 0 || (region !== undefined && filters.a.includes(region));
-    const timing = row.timing ?? "now";
-    const okT = filters.t.length === 0 || filters.t.includes(timing);
-    return okF && okB && okA && okT;
+    const okView = clientView ? !!row.clientOk : inNormalView(row);
+    return okF && okB && okA && okView;
   }
 
   function toggle(key: keyof FilterState, value: string) {
@@ -110,6 +116,21 @@ export default function StoreExplorer({ stores }: { stores: StoreRow[] }) {
 
   return (
     <>
+      <div className="kyoka-cta">
+        {clientView ? (
+          <p id="kyoka-desc"><b>顧客（指名のお客様）をお持ちのスタイリスト</b>を受け入れ可能な店舗の一覧です。この一覧以外のセレスト各店も、指名のお客様50名以上をお連れいただける方は全店舗でご紹介可能です。</p>
+        ) : (
+          <p id="kyoka-desc">ご紹介したい候補者に合わせて一覧をお選びください。</p>
+        )}
+        <div className="view-switch" role="group" aria-label="一覧の切り替え">
+          <button type="button" className={!clientView ? "on" : undefined} onClick={() => setClientView(false)}>
+            通常の募集一覧（{counts.normal}店舗）
+          </button>
+          <button type="button" className={clientView ? "on" : undefined} onClick={() => setClientView(true)}>
+            顧客（指名のお客様）をお持ちの方向け（{counts.client}店舗）
+          </button>
+        </div>
+      </div>
       {FILTER_GROUPS.map((group) => (
         <div className="filters" role="group" aria-label={group.aria} key={group.key}>
           <span className="f-label">{group.label}</span>

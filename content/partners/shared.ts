@@ -9,7 +9,7 @@ export const FOOTER_UPDATED =
   "掲載条件は作成時点のものです。最新の条件・個別のご相談は担当（Beauty Grow 採用担当）までお問い合わせください。｜最終更新 2026年8月17日";
 
 export const SHARED_HERO_STATS: HeroStat[] = [
-  { value: "41", unit: "店舗", label: "求人中の店舗（うち5店はオープン準備中）" },
+  { value: "35", unit: "店舗", label: "求人中の店舗（うち5店はオープン準備中）" },
   { value: "15", unit: "店舗", label: "最優先（★★★）", gold: true },
 ];
 

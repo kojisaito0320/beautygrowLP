@@ -83,6 +83,11 @@ section{max-width:1080px;margin:0 auto;padding:44px 16px}
 .filters .f-label{font-size:12px;color:var(--sub);min-width:64px}
 .filters button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer;font-family:inherit;color:var(--ink)}
 .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.kyoka-cta{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:4px 0 14px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;background:var(--card)}
+.kyoka-cta p{margin:0;font-size:14px}
+.view-switch{display:flex;gap:8px;flex-wrap:wrap}
+.view-switch button{border:1px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 18px;font-size:13.5px;cursor:pointer;font-family:inherit}
+.view-switch button.on{background:var(--ink);color:#fff}
 .table-scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
 table{border-collapse:collapse;width:100%;min-width:840px;font-size:13.5px}
 th{background:#f3f0ea;text-align:left;font-size:12px;letter-spacing:.05em;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
