@@ -215,7 +215,7 @@ export default function NicottoPage() {
           </div>
           <div className="table-scroll">
             <table>
-              <caption>経験歩合給（指名売上に応じて基本給に加算）</caption>
+              <caption>経験歩合給（前職からの移籍顧客売上に応じて基本給に加算）</caption>
               <thead><tr><th>指名売上（月）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
               <tbody>
                 <tr><td>30万円</td><td className="num">＋20,000円</td><td className="num">＋22,000円</td><td className="num">＋30,000円</td></tr>
@@ -227,7 +227,7 @@ export default function NicottoPage() {
           </div>
           <div className="table-scroll">
             <table>
-              <caption>売上歩合（インセンティブ）— 施術売上に応じて支給</caption>
+              <caption>売上歩合給（指名客売上に応じて基本給に加算）</caption>
               <thead><tr><th>施術売上（月・税抜）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
               <tbody>
                 <tr><td>70万円</td><td className="num">＋80,000円</td><td className="num">＋59,000円</td><td className="num">0円</td></tr>
@@ -237,7 +237,7 @@ export default function NicottoPage() {
               </tbody>
             </table>
           </div>
-          <p className="tbl-note">売上歩合の計算式: 施術売上（税抜）の40％−25,000円が「基本給＋経験歩合給」を上回った額を支給（累計清算）。頑張った分がそのまま報酬に反映されます。</p>
+          <p className="tbl-note">売上歩合の計算式: 施術指名売上（税抜）の40％−25,000円が「基本給＋経験歩合給」を上回った額を支給（累計清算）。頑張った分がそのまま報酬に反映されます。</p>
           <div className="allow">
             <div><b>口コミ手当</b>1件につき500円</div>
             <div><b>物販手当</b>販売商品の10〜20％</div>
