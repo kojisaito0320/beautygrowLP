@@ -12,12 +12,11 @@
 //      (selector button counts are computed from data at runtime, so they need no check)
 //
 // Usage: npm run audit
-// Auth: Google service-account JSON. Resolution order:
-//   GOOGLE_SERVICE_ACCOUNT_JSON env var → .env.local → Cockpit default path.
-import { existsSync, readFileSync } from "node:fs";
-import { createPrivateKey, sign } from "node:crypto";
+// Auth: Google service-account JSON via tools/sheets-auth.mjs.
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { accessToken } from "./sheets-auth.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const MASTER = "1A2-YsaWxVui3vX-O3r0F5EB-9IpKd7yuKsF8LlnLehA";
@@ -70,57 +69,8 @@ const LP_APPROVED_EXTRA = new Set([
 // ⑤側の非掲載例外（内緒メモ等）
 const G5_SKIP = new Set(["OAK|久留米"]);
 
-function credentialsPath() {
-  if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON) return process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  const envLocal = path.join(ROOT, ".env.local");
-  if (existsSync(envLocal)) {
-    for (const line of readFileSync(envLocal, "utf8").split(/\r?\n/)) {
-      const m = line.match(/^GOOGLE_SERVICE_ACCOUNT_JSON=(.+)$/);
-      if (m) return m[1].trim().replace(/^["']|["']$/g, "");
-    }
-  }
-  const fallback = "c:/Users/ksait/cockpits/personal-cockpit/.secrets/gcp/service-account.json";
-  if (existsSync(fallback)) return fallback;
-  console.error(
-    "service account JSON が見つかりません。環境変数 GOOGLE_SERVICE_ACCOUNT_JSON か .env.local にパスを設定してください。"
-  );
-  process.exit(2);
-}
-
-async function accessToken() {
-  const creds = JSON.parse(readFileSync(credentialsPath(), "utf8"));
-  const now = Math.floor(Date.now() / 1000);
-  const b64u = (s) => Buffer.from(s).toString("base64url");
-  const signingInput =
-    b64u(JSON.stringify({ alg: "RS256", typ: "JWT" })) +
-    "." +
-    b64u(
-      JSON.stringify({
-        iss: creds.client_email,
-        scope: "https://www.googleapis.com/auth/spreadsheets.readonly",
-        aud: "https://oauth2.googleapis.com/token",
-        exp: now + 3600,
-        iat: now,
-      })
-    );
-  const sig = sign("RSA-SHA256", Buffer.from(signingInput), createPrivateKey(creds.private_key)).toString("base64url");
-  const res = await fetch("https://oauth2.googleapis.com/token", {
-    method: "POST",
-    headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion: signingInput + "." + sig,
-    }),
-  });
-  if (!res.ok) {
-    console.error("token error:", await res.text());
-    process.exit(2);
-  }
-  return (await res.json()).access_token;
-}
-
 async function fetchG5() {
-  const tok = await accessToken();
+  const tok = await accessToken(ROOT, "https://www.googleapis.com/auth/spreadsheets.readonly");
   const url =
     `https://sheets.googleapis.com/v4/spreadsheets/${MASTER}/values/` +
     encodeURIComponent("⑤強化エリア!A1:Z200");

@@ -1,5 +1,5 @@
 import type { PartnerConfig } from "@/lib/schema";
-import { SHARED_HERO_STATS } from "./shared";
+import { DEAL_CHANGES, SHARED_HERO_STATS } from "./shared";
 
 export const wc: PartnerConfig = {
   slug: "wc",
@@ -20,12 +20,7 @@ export const wc: PartnerConfig = {
     ],
   },
   summary: {
-    dealChanges: [
-      { badge: "NEW", text: "高橋様 2026/2退職（記録の訂正）／小原様・松野様は内定ステータスに整理" },
-      { badge: "NEW", text: "深町様・奥山様・中村様 在籍中（各店2ヶ月目）／浅井様 2025年新人賞受賞" },
-      { text: "境野様 5/8入社・在籍中／梅澤様 10/1入社予定（内定）" },
-      { text: "詳細は「ご紹介実績」をご覧ください", muted: true },
-    ],
+    dealChanges: DEAL_CHANGES.wc,
   },
   salaryGrowthNote: "※ 単価は客単価。年収実例は当社在籍スタッフの実績です。",
   referralSummary: {

@@ -45,17 +45,20 @@ npm run build                # 型チェック兼ビルド
 LPはデータの終点です。**必ずこの順序で更新する**（LPだけの直接修正は禁止）:
 
 1. **マスタを修正** — BG採用マスタ2026（⑤強化エリア・④採用者フォロー等）が唯一の情報源
-2. **各紹介会社の共有シートを更新** — WC・ミライズム各スプシの「★更新サマリ」タブと「今回の変更点」
-3. **最後にLPを修正** — 下記のコンテンツファイルを編集し、`npm run audit` が「問題なし」になってから push（push＝本番自動デプロイ）
+2. **LPのコンテンツを更新** — 下記のコンテンツファイルを編集し、`npm run audit` が「問題なし」になってから push（push＝本番自動デプロイ）
+3. **共有シートへ転記** — `npm run push-summary` でプレビューを確認 → `npm run push-summary -- --apply` で、WC・ミライズム両スプシの「★更新サマリ」タブをLPコンテンツから自動生成・上書き（手動転記は廃止）
 
-`npm run audit` はマスタ⑤とLPの店舗一覧を機械照合し、⑤に根拠のない行・優先度（★）や顧客持ちの不一致・件数ズレを検出します。
+`npm run audit` はマスタ⑤とLPの店舗一覧を機械照合し、⑤に根拠のない行・優先度（★）・顧客持ち・ブランクあり未経験の不一致・件数ズレを検出します。
 認証は Google サービスアカウントJSON（環境変数 `GOOGLE_SERVICE_ACCOUNT_JSON` にパスを設定、または `.env.local` に記載。
-コミットは絶対にしない）。マスタ⑤のシートにサービスアカウントを閲覧者として共有しておく必要があります。
+コミットは絶対にしない）。マスタ⑤には**閲覧者**、WC・ミライズムの共有スプシには**編集者**としてサービスアカウントを共有しておく必要があります。
+
+`npm run push-summary` は⑤を直接読みません（⑤の備考には社内メモが含まれるため）。転記元は audit 済みの
+`stores.json`・`updates.json`・`referrals.*.json` のみで、パートナーに見せてよい情報だけがシートに載ります。
 
 ## 更新サイクルで触るファイル
 
 - 店舗一覧: `content/data/stores.json`
-- 更新日・変更点（全LP共通）: `content/partners/shared.ts`
+- 更新日・変更点（LPと★更新サマリの単一ソース）: `content/data/updates.json`（`shared.ts` が参照）
 - パートナー別の統計・成約者: `content/partners/wc.ts` / `miraizm.ts`
 - 候補者一覧（保護ページ・**個人情報**）: `content/data/private/referrals.*.json`
 
@@ -74,7 +77,9 @@ LPはデータの終点です。**必ずこの順序で更新する**（LPだけ
 
 ## tools/
 
-- `tools/sheets-sync/` — Googleスプレッドシート取得・差分確認（fetch_update.py / analyze_diff.py）。取得結果を上記コンテンツファイルへ反映する運用
+- `tools/sheets-sync/push-summary.mjs` — WC・ミライズム両スプシの「★更新サマリ」タブをLPコンテンツから自動生成（`npm run push-summary`。`--apply` なしはドライラン）
+- `tools/sheets-sync/` のその他 — Googleスプレッドシート取得・差分確認（fetch_update.py / analyze_diff.py）。取得結果を上記コンテンツファイルへ反映する運用
+- `tools/sheets-auth.mjs` — サービスアカウント認証の共通ヘルパー（audit / push-summary が使用）
 - `tools/legacy/` — 旧静的HTML時代の文字列置換スクリプト（廃止予定・参照用）
 - `tools/link-check.mjs` — 店舗リンクの生存チェック
 - `tools/audit-stores.mjs` — ⑤強化エリアと stores.json の機械照合（`npm run audit`）

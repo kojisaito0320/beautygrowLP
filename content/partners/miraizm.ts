@@ -1,5 +1,5 @@
 import type { PartnerConfig } from "@/lib/schema";
-import { SHARED_HERO_STATS } from "./shared";
+import { DEAL_CHANGES, SHARED_HERO_STATS } from "./shared";
 
 export const miraizm: PartnerConfig = {
   slug: "miraizm",
@@ -20,12 +20,7 @@ export const miraizm: PartnerConfig = {
     ],
   },
   summary: {
-    dealChanges: [
-      { badge: "NEW", text: "富永様が採用となりました（内定→採用）。2026年9月入社予定・9月より東京研修、栄店勤務予定です" },
-      { text: "在籍中: 江黒様・桑江様・川口様・谷崎様（詳細は下表の「その後」参照）" },
-      { text: "小原様の記録を追加（2025年1月入社→6月退職）。金子様は記録整理のため除外（成約9名に）／鈴木様・眞木様・上地様は退職" },
-      { text: "詳細は「ご紹介実績」をご覧ください", muted: true },
-    ],
+    dealChanges: DEAL_CHANGES.miraizm,
   },
   salaryGrowthNote:
     "※ 単価は客単価。年収実例は当社在籍スタッフの実績です。詳細は共有スプレッドシートの「給与の推移」タブをご覧ください。",
