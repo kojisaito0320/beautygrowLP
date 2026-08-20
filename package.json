@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "link-check": "node tools/link-check.mjs"
+    "link-check": "node tools/link-check.mjs",
+    "audit": "node tools/audit-stores.mjs"
   },
   "dependencies": {
     "next": "^15.5.0",

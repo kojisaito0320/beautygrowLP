@@ -40,6 +40,18 @@ npm run build                # 型チェック兼ビルド
 
 → `/<slug>` と `/<slug>/referrals` が自動で生えます。
 
+## 更新サイクル（順序厳守）
+
+LPはデータの終点です。**必ずこの順序で更新する**（LPだけの直接修正は禁止）:
+
+1. **マスタを修正** — BG採用マスタ2026（⑤強化エリア・④採用者フォロー等）が唯一の情報源
+2. **各紹介会社の共有シートを更新** — WC・ミライズム各スプシの「★更新サマリ」タブと「今回の変更点」
+3. **最後にLPを修正** — 下記のコンテンツファイルを編集し、`npm run audit` が「問題なし」になってから push（push＝本番自動デプロイ）
+
+`npm run audit` はマスタ⑤とLPの店舗一覧を機械照合し、⑤に根拠のない行・優先度（★）や顧客持ちの不一致・件数ズレを検出します。
+認証は Google サービスアカウントJSON（環境変数 `GOOGLE_SERVICE_ACCOUNT_JSON` にパスを設定、または `.env.local` に記載。
+コミットは絶対にしない）。マスタ⑤のシートにサービスアカウントを閲覧者として共有しておく必要があります。
+
 ## 更新サイクルで触るファイル
 
 - 店舗一覧: `content/data/stores.json`
@@ -47,7 +59,7 @@ npm run build                # 型チェック兼ビルド
 - パートナー別の統計・成約者: `content/partners/wc.ts` / `miraizm.ts`
 - 候補者一覧（保護ページ・**個人情報**）: `content/data/private/referrals.*.json`
 
-更新後は `npm run build` が通ることを確認（型チェックがデータ検証を兼ねる）。HPBリンクの生存確認は `npm run link-check`。
+更新後は `npm run audit`（⑤との機械照合）と `npm run build`（型チェック）が通ることを確認。HPBリンクの生存確認は `npm run link-check`。
 
 ## データの取り扱い（重要）
 
@@ -65,6 +77,7 @@ npm run build                # 型チェック兼ビルド
 - `tools/sheets-sync/` — Googleスプレッドシート取得・差分確認（fetch_update.py / analyze_diff.py）。取得結果を上記コンテンツファイルへ反映する運用
 - `tools/legacy/` — 旧静的HTML時代の文字列置換スクリプト（廃止予定・参照用）
 - `tools/link-check.mjs` — 店舗リンクの生存チェック
+- `tools/audit-stores.mjs` — ⑤強化エリアと stores.json の機械照合（`npm run audit`）
 
 ## 店舗一覧の2ビュー仕様（2026-08-19確定版）
 
@@ -86,5 +99,6 @@ npm run build                # 型チェック兼ビルド
 
 - セレスト三軒茶屋・久屋大通・小倉・福間は**OAK店舗を改装してオープン予定**（2026-08-19齋藤さん）。
   HPB未掲載はこのため。掲載開始を確認したらリンクを追加する（三軒茶屋の旧セレスト掲載 slnH000277206 は404で掲載終了済み）
-- ⑤との機械照合スクリプト（audit_stores.py）は旧リポジトリ（personal-cockpit/work/recruiting）にあり未移植。
-  ⑤同期の際は件数（通常／顧客持ち）の突き合わせを必ず行うこと
+- ⑤同期・店舗一覧の変更のたびに `npm run audit` を実行し、「問題なし」を確認してからデプロイする。
+  再発防止の経緯: 2026-08-19、旧ソース由来の竹ノ塚行が⑤との照合なしに通常募集へ残留していた
+  （行の追加・修正のみで削除照合が無かったのが原因）。⑤の表記ゆれは tools/audit-stores.mjs の ALIAS で吸収する
