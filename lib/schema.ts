@@ -17,6 +17,8 @@ export interface StoreRow {
   timing?: Timing; // defaults to "now"
   /** Master sheet ⑤ column B star: accepts stylists who bring their own clients */
   clientOk?: boolean;
+  /** Master sheet ⑤ column C ○: welcomes returners (ブランクあり) and inexperienced applicants */
+  blankOk?: boolean;
   stars: string; // "★" | "★★" | "★★★" | ""
   count: string; // rendered as-is; empty string allowed
   hpbUrl?: string;

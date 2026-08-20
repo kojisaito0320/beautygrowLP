@@ -18,3 +18,4 @@ next-env.d.ts
 
 # sheet-sync temporary output
 tools/sheets-sync/out/
+.vercel

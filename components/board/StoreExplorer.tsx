@@ -27,7 +27,7 @@ function cellText(row: StoreRow, col: number): string {
   }
 }
 
-type FilterState = { f: string[]; b: string[]; a: string[] };
+type FilterState = { f: string[]; b: string[]; a: string[]; k: string[] };
 
 const FILTER_GROUPS: {
   key: keyof FilterState;
@@ -63,6 +63,12 @@ const FILTER_GROUPS: {
       { value: "沖縄", label: "沖縄" },
     ],
   },
+  {
+    key: "k", label: "こだわり:", aria: "こだわり条件で絞り込み",
+    options: [
+      { value: "blank", label: "ブランクあり・未経験OK" },
+    ],
+  },
 ];
 
 /** Normal view: has priority stars, or is not a client-only listing */
@@ -72,7 +78,7 @@ function inNormalView(row: StoreRow): boolean {
 
 export default function StoreExplorer({ stores }: { stores: StoreRow[] }) {
   const [sort, setSort] = useState<SortState | null>(null);
-  const [filters, setFilters] = useState<FilterState>({ f: [], b: [], a: [] });
+  const [filters, setFilters] = useState<FilterState>({ f: [], b: [], a: [], k: [] });
   const [clientView, setClientView] = useState(false);
 
   const counts = useMemo(
@@ -98,8 +104,9 @@ export default function StoreExplorer({ stores }: { stores: StoreRow[] }) {
     const okB = filters.b.length === 0 || filters.b.includes(row.brand);
     const region = REGION[row.area];
     const okA = filters.a.length === 0 || (region !== undefined && filters.a.includes(region));
+    const okK = filters.k.length === 0 || (filters.k.includes("blank") && !!row.blankOk);
     const okView = clientView ? !!row.clientOk : inNormalView(row);
-    return okF && okB && okA && okView;
+    return okF && okB && okA && okK && okView;
   }
 
   function toggle(key: keyof FilterState, value: string) {
@@ -202,7 +209,10 @@ export default function StoreExplorer({ stores }: { stores: StoreRow[] }) {
                     {row.hpbUrl && row.youkenLink && "・"}
                     {row.youkenLink && <a href="#youken">募集要項</a>}
                   </td>
-                  <td>{row.note}</td>
+                  <td>
+                    {row.blankOk && <span className="tag-blank">ブランク・未経験OK</span>}
+                    {row.note}
+                  </td>
                 </tr>
               );
             })}

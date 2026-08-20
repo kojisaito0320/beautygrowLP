@@ -266,38 +266,58 @@ export function YoukenSection() {
   );
 }
 
+const SALARY_TRACKS = [
+  {
+    title: "業務委託（歩合50％）",
+    cap: "平均時給＝生産性の50％。平均年収は週休2日で働いた場合",
+    years: [
+      { y: "2023年", val: "約436万円", wage: "時給 約1,650円", pct: null, h: 110, now: false },
+      { y: "2024年", val: "約475万円", wage: "時給 約1,800円", pct: "前年比109%", h: 120, now: false },
+      { y: "2025年", val: "約528万円", wage: "時給 約2,000円", pct: "前年比111%", h: 133, now: false },
+      { y: "2026年", val: "約594万円", wage: "時給 約2,250円", pct: "前年比113%", h: 150, now: true },
+    ],
+  },
+  {
+    title: "正社員・パート・アルバイト（歩合原資40％）",
+    cap: "平均時給＝生産性の40％。平均年収は週休2日で働いた場合・歩合手当別",
+    years: [
+      { y: "2023年", val: "約349万円", wage: "時給 約1,320円", pct: null, h: 110, now: false },
+      { y: "2024年", val: "約380万円", wage: "時給 約1,440円", pct: "前年比109%", h: 120, now: false },
+      { y: "2025年", val: "約422万円", wage: "時給 約1,600円", pct: "前年比111%", h: 133, now: false },
+      { y: "2026年", val: "約475万円", wage: "時給 約1,800円", pct: "前年比113%", h: 150, now: true },
+    ],
+  },
+];
+
 export function SalaryGrowthSection({ note }: { note: string }) {
   return (
     <section id="salary-growth">
       <div className="sec-head"><h2>給与の推移</h2><span className="en">SALARY GROWTH</span></div>
-      <p style={{ maxWidth: 680, marginBottom: 18 }}>生産性の改善に取り組み続けており、<b>全社の平均給与は毎年上昇しています</b>。候補者様への訴求材料としてご活用ください。</p>
+      <p style={{ maxWidth: 680, marginBottom: 18 }}>生産性の改善に取り組み続けており、<b>全社の平均給与は2023年から毎年上昇しています</b>。候補者様への訴求材料としてご活用ください。</p>
       <div className="hero-stats" style={{ margin: "0 0 22px" }}>
-        <div className="stat gold"><b>528</b>万円<span>2025年 平均年収（業務委託・週休2日勤務の場合）</span></div>
-        <div className="stat"><b>+21%</b><span>平均年収の伸び（2023→2025年）</span></div>
+        <div className="stat gold">約<b>594</b>万円<span>2026年 平均年収（業務委託・週休2日勤務の場合）</span></div>
+        <div className="stat"><b>+36%</b><span>平均年収の伸び（2023→2026年）</span></div>
         <div className="stat"><b>970</b>万円<span>店長クラスの年収実例（2025年）</span></div>
       </div>
-      <h3 style={{ fontSize: 16, marginBottom: 10 }}>業務委託（歩合50％）の推移</h3>
-      <div className="table-scroll" style={{ marginBottom: 24 }}>
-        <table>
-          <thead><tr><th></th><th>2023年</th><th>2024年</th><th>2025年</th><th>2026年</th><th>備考</th></tr></thead>
-          <tbody>
-            <tr><td><b>生産性</b></td><td className="num">3,300円</td><td className="num">3,600円<small>（前年比109%）</small></td><td className="num">4,000円<small>（前年比111%）</small></td><td className="num">集計中</td><td></td></tr>
-            <tr><td><b>平均時給</b></td><td className="num">1,650円</td><td className="num">1,800円</td><td className="num"><b>2,000円</b></td><td className="num">集計中</td><td>生産性の50％</td></tr>
-            <tr><td><b>平均年収</b></td><td className="num">435.6万円</td><td className="num">475.2万円</td><td className="num"><b>528万円</b></td><td className="num">集計中</td><td>週休2日で働いた場合</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h3 style={{ fontSize: 16, marginBottom: 10 }}>正社員・パート・アルバイト（歩合原資40％）の推移</h3>
-      <div className="table-scroll" style={{ marginBottom: 24 }}>
-        <table>
-          <thead><tr><th></th><th>2023年</th><th>2024年</th><th>2025年</th><th>2026年</th><th>備考</th></tr></thead>
-          <tbody>
-            <tr><td><b>生産性</b></td><td className="num">3,300円</td><td className="num">3,600円<small>（前年比109%）</small></td><td className="num">4,000円<small>（前年比111%）</small></td><td className="num">集計中</td><td></td></tr>
-            <tr><td><b>平均時給</b></td><td className="num">1,320円</td><td className="num">1,440円</td><td className="num"><b>1,600円</b></td><td className="num">集計中</td><td>生産性の40％</td></tr>
-            <tr><td><b>平均年収</b></td><td className="num">348.5万円</td><td className="num">380.2万円</td><td className="num"><b>422.4万円</b></td><td className="num">集計中</td><td>週休2日で働いた場合・歩合手当別</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p style={{ maxWidth: 680, marginBottom: 18, fontSize: 13.5 }}>
+        生産性（スタッフ1人・1時間あたりの売上）は 約3,300円（2023年）→ 約3,600円 → 約4,000円 → <b>約4,500円（2026年）</b>と毎年上昇。平均時給・平均年収も生産性に連動して毎年上がっています。
+      </p>
+      {SALARY_TRACKS.map((track) => (
+        <div className="sg-track" key={track.title}>
+          <h3>{track.title}</h3>
+          <p className="sg-cap">平均年収の推移｜{track.cap}</p>
+          <div className="sg-chart">
+            {track.years.map((yr) => (
+              <div className={yr.now ? "sg-col now" : "sg-col"} key={yr.y}>
+                {yr.pct && <span className="sg-pct">{yr.pct}</span>}
+                <span className="sg-val">{yr.val}</span>
+                <div className="sg-bar" style={{ height: yr.h }} aria-hidden="true" />
+                <div className="sg-foot"><b>{yr.y}</b><span>{yr.wage}</span></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
       <h3 style={{ fontSize: 16, marginBottom: 10 }}>スタッフ年収の推移（実例）</h3>
       <div className="table-scroll">
         <table>

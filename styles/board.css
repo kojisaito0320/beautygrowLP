@@ -67,6 +67,7 @@ section{max-width:1080px;margin:0 auto;padding:44px 16px}
 .nav a.nav-nicotto{color:var(--nicotto);font-weight:700}
 .chip.form{background:#efedea;color:var(--sub);font-weight:500}
 .stars{color:var(--brass);letter-spacing:.05em;font-size:13px}
+.tag-blank{display:inline-block;background:var(--celeste-soft);color:var(--celeste);font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;margin:0 6px 2px 0;white-space:nowrap}
 
 /* summary cards */
 .sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
@@ -99,6 +100,28 @@ tr:last-child td{border-bottom:none}
 td .shop{font-weight:700}
 td a{font-size:12.5px}
 .num{font-feature-settings:'tnum';text-align:center}
+
+/* salary growth chart (#salary-growth) */
+.sg-track{margin-bottom:26px}
+.sg-track h3{font-size:16px;margin-bottom:2px}
+.sg-cap{font-size:12px;color:var(--sub);margin-bottom:10px}
+.sg-chart{display:flex;align-items:flex-end;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px 14px}
+.sg-col{flex:1;min-width:64px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.sg-pct{font-size:11px;font-weight:700;color:var(--celeste);background:var(--celeste-soft);border-radius:999px;padding:1px 8px;margin-bottom:6px;white-space:nowrap}
+.sg-val{font-family:'Zen Old Mincho',serif;font-size:clamp(14px,2.6vw,18px);font-weight:700;font-feature-settings:'tnum';margin-bottom:6px;white-space:nowrap}
+.sg-bar{width:min(56px,72%);background:var(--celeste);opacity:.4;border-radius:4px 4px 0 0}
+.sg-col.now .sg-bar{background:var(--brass);opacity:1}
+.sg-col.now .sg-val,.sg-col.now .sg-pct{color:var(--brass)}
+.sg-col.now .sg-pct{background:var(--brass-soft)}
+.sg-foot{width:100%;border-top:2px solid var(--line);padding-top:6px;text-align:center}
+.sg-foot b{display:block;font-size:13px;font-feature-settings:'tnum'}
+.sg-foot span{display:block;font-size:11px;color:var(--sub);white-space:nowrap}
+@media (max-width:720px){
+  .sg-chart{gap:8px;padding:16px 10px 10px}
+  .sg-col{min-width:0}
+  .sg-pct{font-size:10px;padding:1px 5px}
+  .sg-foot span{font-size:10px}
+}
 
 /* youken */
 .brand-block{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:18px;overflow:hidden}

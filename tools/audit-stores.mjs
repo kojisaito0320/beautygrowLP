@@ -5,7 +5,8 @@
 // Reports:
 //   1. LP rows with no backing row in ⑤ (stale/legacy rows)
 //   2. Star (優先度) mismatches between ⑤A列 and stores.json `stars`
-//   3. 顧客持ち mismatches between ⑤B列 and stores.json `clientOk`
+//   3. 顧客持ち mismatches between ⑤B列 and stores.json `clientOk`,
+//      and ブランクあり未経験 mismatches between ⑤C列 and stores.json `blankOk`
 //   4. ⑤ rows that look recruiting (A★ or B★ or 人数あり) but missing from the LP
 //   5. Count check: hero 「N店舗」 (content/partners/shared.ts) vs actual normal-view rows
 //      (selector button counts are computed from data at runtime, so they need no check)
@@ -25,17 +26,22 @@ const MASTER = "1A2-YsaWxVui3vX-O3r0F5EB-9IpKd7yuKsF8LlnLehA";
 // （2026-08-19〜20にかけて列の挿入が続いているため、列番号は固定しない）
 // ⑤の(業態,店舗) → LP行の(brand, shop)。⑤の表記ゆれ・分割店舗はここで吸収する
 const ALIAS = new Map([
-  ["まつげ|沖縄", [["matsuge", "Natural ViVi 那覇店"], ["matsuge", "Natural ViVi おもろまち店"]]],
+  // ⑤は2026/08/19より沖縄を「沖縄」（那覇=安里）と「新都心」（おもろまち）に分割
+  ["まつげ|沖縄", [["matsuge", "Natural ViVi 那覇店"]]],
+  ["まつげ|新都心", [["matsuge", "Natural ViVi おもろまち店"]]],
   ["まつげ|博多", [["matsuge", "Belle 博多店"]]],
   ["まつげ|久留米", [["matsuge", "OAK 久留米店"]]],
-  ["まつげ|大名", [["matsuge", "Belle 天神大名店"]]],
   ["カラー|自由が丘", [["color", "SPEEDY 自由が丘店"]]],
-  ["カラー|学大", [["color", "SPEEDY 学芸大学店"]]],
+  ["カラー|学芸大学", [["color", "SPEEDY 学芸大学店"]]],
   ["カラー|五反田", [["color", "Colors Labo 五反田店"]]],
   ["カラー|祐天寺", [["color", "SPEEDY 祐天寺店"]]],
   ["カラー|恵比寿", [["color", "SPEEDY 恵比寿店"]]],
   ["カラー|那覇", [["color", "SPEEDY 那覇新都心店"]]],
   ["カラー|仙川", [["color", "カラーズラボ 仙川店"]]],
+  ["カラー|日吉", [["color", "カラーズラボ 日吉店"]]],
+  ["カラー|高円寺", [["color", "カラーズラボ 高円寺店"]]],
+  ["カラー|三軒茶屋", [["color", "カラーズラボ 三軒茶屋店"]]],
+  ["カラー|八王子", [["color", "カラーズラボ 八王子店"]]],
   ["CELESTE|門仲", [["celeste", "門前仲町店"]]],
   ["CELESTE|京都四条烏丸", [["celeste", "京都烏丸店"]]],
   ["CELESTE|石神井", [["celeste", "石神井公園店"]]],
@@ -130,7 +136,7 @@ async function fetchG5() {
   }
   const header = rows[0].map((h) => String(h).replace(/\s/g, ""));
   const col = {};
-  for (const [field, name] of [["pri", "優先度"], ["cli", "顧客持ち"], ["gyo", "業態"], ["ten", "店舗"], ["num", "不足人数"]]) {
+  for (const [field, name] of [["pri", "優先度"], ["cli", "顧客持ち"], ["blk", "ブランク"], ["gyo", "業態"], ["ten", "店舗"], ["num", "不足人数"]]) {
     col[field] = header.findIndex((h) => h.includes(name));
     if (col[field] === -1) {
       console.error(`⑤のヘッダーに「${name}」列が見つかりません（列名が変わった場合はこのスクリプトを更新）`);
@@ -150,7 +156,7 @@ async function fetchG5() {
       continue;
     }
     seen.add(`${gyo}|${ten}`);
-    out.push({ pri, cli: Boolean(cli), gyo, ten, num: cell(raw, "num") });
+    out.push({ pri, cli: Boolean(cli), blk: Boolean(cell(raw, "blk")), gyo, ten, num: cell(raw, "num") });
   }
   return out;
 }
@@ -162,6 +168,7 @@ function loadLp() {
     shop: r.shop,
     stars: (r.stars ?? "").trim(),
     c: Boolean(r.clientOk),
+    blk: Boolean(r.blankOk),
   }));
   const shared = readFileSync(path.join(ROOT, "content/partners/shared.ts"), "utf8");
   const hero = shared.match(/value: "(\d+)", unit: "店舗", label: "求人中の店舗/);
@@ -201,6 +208,9 @@ for (const g of g5) {
     }
     if (r.c !== g.cli) {
       problems.push(`[顧客持ちの不一致] ${chip}/${shop}: LP clientOk=${r.c} ⑤B列=${g.cli ? "★" : "空"}`);
+    }
+    if (r.blk !== g.blk) {
+      problems.push(`[ブランク・未経験の不一致] ${chip}/${shop}: LP blankOk=${r.blk} ⑤C列=${g.blk ? "○" : "空"}`);
     }
   }
 }
