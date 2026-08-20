@@ -216,7 +216,7 @@ export default function NicottoPage() {
           <div className="table-scroll">
             <table>
               <caption>経験歩合給（前職からの移籍顧客売上に応じて基本給に加算）</caption>
-              <thead><tr><th>指名売上（月）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
+              <thead><tr><th>移籍顧客売上（月）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
               <tbody>
                 <tr><td>30万円</td><td className="num">＋20,000円</td><td className="num">＋22,000円</td><td className="num">＋30,000円</td></tr>
                 <tr><td>50万円</td><td className="num">＋33,000円</td><td className="num">＋37,000円</td><td className="num">＋50,000円</td></tr>
@@ -228,7 +228,7 @@ export default function NicottoPage() {
           <div className="table-scroll">
             <table>
               <caption>売上歩合給（指名客売上に応じて基本給に加算）</caption>
-              <thead><tr><th>施術売上（月・税抜）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
+              <thead><tr><th>施術指名売上（月・税抜）</th><th>時短社員 125h</th><th>時短社員 140h</th><th>社員 190h</th></tr></thead>
               <tbody>
                 <tr><td>70万円</td><td className="num">＋80,000円</td><td className="num">＋59,000円</td><td className="num">0円</td></tr>
                 <tr><td>90万円</td><td className="num">＋160,000円</td><td className="num">＋139,000円</td><td className="num">＋69,000円</td></tr>
